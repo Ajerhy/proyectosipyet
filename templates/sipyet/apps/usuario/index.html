@@ -1,0 +1,106 @@
+{% extends "base/static/base_login.html" %}
+<!--
+{-% load staticfiles %}
+-->
+{% load static %}
+{% block title %}Login{% endblock title %}
+{% block content %}
+    <div class="form-box" id="login-box">
+
+        <div class="header">
+            <a href="{% url 'usuario:index' %}">
+                <img src="{% static 'img/archivos1.png' %}"/>
+            </a>
+        </div>
+
+        <form id="login_form" action="" method="post">
+            <div class="body bg-gray">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="input-group">
+                                <span class="input-group-addon">
+                                        <i class="fa fa-user"></i>
+                                </span>
+                            <input type="text" name="usuario" id="usuario" class="form-control" placeholder="Nombre de Usuario"></input>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-lock"></i>
+                            </div>
+                            <input type="password" name="clave" class="form-control" placeholder="Aqu&iacute; su Contrase&ntilde;a"/>
+                        </div>
+                    </div>
+                </div>
+                <!--
+                <div class="form-group">
+                    <input type="checkbox" name="remember_me"/> Remember me
+                </div>
+                -->
+            </div>
+            <div class="footer">
+                <button type="submit" class="btn bg-olive btn-block">Ingresar</button>
+                <!--
+                <p><a href="#">Yo olvide mi Contrase&ntilde;a</a></p>
+                <a href="register.html" class="text-center">Registrar un nuevo Usuario</a>
+                -->
+            </div>
+        </form>
+
+        <div class="margin text-center">
+            <span>&copy;
+                    <script>
+                document.write(new Date().getFullYear())
+            </script> &copy; Sistema de Parqueo y Estacionamiento Tahuamanu</span>
+        </div>
+    </div>
+{% endblock content %}
+{% block jssextras %}
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            $("#usuario").focus();
+            $("#login_form").validate({
+                rules: {
+                    usuario: {
+                        required: true
+                    },
+                    clave: {
+                        required: true
+                    }
+                },
+                messages: {
+                    usuario: {
+                        required: "El nombre de usuario es requerido!"
+                    },
+                    clave: {
+                        required: "La Contrase&ntilde;a es requerida!"
+                    }
+                },
+                submitHandler: function (form) {
+                    $.ajax({
+                        type: "POST",
+                        url: $("#login_form").attr("action"),
+                        data: $("#login_form").serialize(),
+                        dataType: "json",
+                        success: function (datax) {
+                            if (datax.estado == "success") {
+                                window.location.replace("<?=base_url()?>_principal/index");
+                            } else {
+                                toastr[datax.estado](datax.mensaje, 'Aviso del Sistema');
+                            }
+                        }
+                    }).done(function (msg) {
+
+                    }).fail(function (jqXHR, textStatus) {
+                        toastr.error("Fallo por error desconocido!!", 'Aviso del Sistema');
+                    });
+                }
+            });
+
+        });
+    </script>
+{% endblock jssextras %}

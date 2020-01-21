@@ -1,0 +1,37 @@
+{% extends "base/static/base_dashboard.html" %}
+
+<!--
+{-% load staticfiles %}
+-->
+{% load static %}
+
+{% block content %}
+    <div class="wrapper">
+
+        {% block sidebar %}
+            <!-- End Barra SideBar -->
+            {% include "base/sidebar.html" %}
+            <!-- End Barra SideBar -->
+        {% endblock %}
+        <div class="main-panel">
+            {% block nav %}
+                <!-- Barra Navegacion Nav -->
+                {% include "base/navbar.html" %}
+                <!-- End Barra Navegacion Nav -->
+            {% endblock nav %}
+
+            <div class="content">
+                <div class="container-fluid">
+                    {% block contenido %}   {% endblock contenido %}
+                </div>
+            </div>
+
+            {% block footer %}
+                <!-- Footer -->
+                {% include "base/footer.html" %}
+                <!-- End Footer -->
+            {% endblock footer %}
+        </div>
+
+    </div>
+{% endblock content %}
