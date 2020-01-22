@@ -1,0 +1,213 @@
+{% extends "index.html" %}
+<!--
+{-% load staticfiles %}
+-->
+{% load static %}
+
+{% block title %}Listar Perfil Usuario{% endblock title %}
+
+{% block csssextras %}
+{% endblock csssextras %}
+
+
+{% block titulo-contenido %}
+        <h1>
+            Perfil de Usuario
+            <small>Usuario</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
+            <li>Usuarios</li>
+            <li class="active">Lista de Perfiles de Usuarios</li>
+        </ol>
+{% endblock titulo-contenido %}
+
+{% block contenido %}
+    <div class="box">
+        <div class="box-header">
+            <h3 class="box-title">Lista de los Perfiles de Usuarios</h3>
+            <div class="box-tools pull-right">
+                <div class="btn-group">
+                    <button onclick="nuevo()" class="btn btn-success"><i class="fa fa-plus"></i> Nuevo</button>
+                    <button id="b_editar" class="btn btn-info" onclick="modificar()"><i
+                            class="fa fa-pencil-square-o"></i> Modificar
+                    </button>
+                    <button id="b_borrar" class="btn btn-danger" onclick="eliminar()"><i class="fa fa-trash-o"></i>
+                        Eliminar
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="box-body">
+            <div class="table-container">
+                <table id="tabla" class="table table-striped table-bordered table-hover table-condensed" width="100%">
+                    <thead>
+                    <tr role="row" class="heading">
+                        <th width="5%">#</th>
+                        <th width="35%">NOMBRE</th>
+                        <th width="25%">SIGLA</th>
+                        <th width="25%">TIPO</th>
+                        <th width="25%">TELEFONO</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <th width="5%">#</th>
+                        <th width="35%">NOMBRE</th>
+                        <th width="25%">SIGLA</th>
+                        <th width="25%">TIPO</th>
+                        <th width="25%">TELEFONO</th>
+                    </tr>
+                    <th colspan="5">
+
+                    </th>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock contenido %}
+
+
+{% block jssextras %}
+
+    <script type="text/javascript">
+        function nuevo() {
+            $('#nuevo_autor_link').click();
+        }
+
+        function modificar() {
+            var id = $('#check_id:checked').val();
+            if (!$(".checkboxes").is(':checked')) {
+                toastr.warning("Seleccione un Autor de la lista por favor!", "Aviso del Sistema");
+
+            } else {
+                $('#divNuevoAutor').html('');
+                /*$.blockUI({message: '<h5><img src="<?=base_url()?>libs/img/ajax-loader.gif" /> Cargando espere por favor...</h5>'});*/
+                $.blockUI({message: '<h5><img src="{% static 'img/ajax-loader.gif' %}"/> Cargando espere por favor...</h5>'});
+                $('#divNuevoAutor').load("<?=base_url()?>_autores/nuevo_view", {id_autor: id}, function () {
+                    $.unblockUI();
+                    $('#divNuevoAutor').modal();
+                });
+            }
+        }
+
+        function eliminar() {
+            var id = $('#check_id:checked').val();
+            if (!$(".checkboxes").is(':checked')) {
+                toastr.warning("Seleccione un Autor de la lista por favor!", "Aviso del Sistema");
+            } else {
+                bootbox.confirm("Esta seguro de eliminar el Autor seleccionado?", function (result) {
+                    if (result) {
+                        $.ajax({
+                            type: "POST",
+                            url: "<?=base_url()?>_autores/eliminar",
+                            data: {"id": id},
+                            dataType: "json",
+                            success: function (datas) {
+                                if (datas.estado == "success") {
+                                    if (oTable != undefined) {
+                                        oTable.fnReloadAjax();
+                                    }
+                                    toastr.success(datas.mensaje, "Notificaci&oacute;n del Sistema");
+                                    $("#tr" + id).slideUp();
+                                    $('#b_editar').removeClass('btn-info');
+                                    $('#b_editar').addClass('btn-default');
+                                    $('#b_borrar').removeClass('btn-danger');
+                                    $('#b_borrar').addClass('btn-default');
+                                } else {
+                                    toastr.error(datas.mensaje, "Notificaci&oacute;n del Sistema");
+                                }
+                            }
+                        }).done(function (msg) {
+                            //alert( "Codigo Ejecutado! " + msg );
+                        }).fail(function (jqXHR, textStatus) {
+                            toastr.error("Error al procesar su solicitud!", "Notificaci&oacute;n del Sistema");
+                        });
+                    }
+                });
+
+            }
+        }
+
+        var id_autor = 0;
+        var oTable;
+        jQuery(document).ready(function () {
+
+            oTable = $('#tabla').dataTable({
+                "responsive": true,
+                "order": [[0, "desc"]],
+                sDom: 'lfrtipL',
+                oSelectable: {
+                    bSingleRowSelect: true,
+                    iColNumber: 1,
+                    sIdColumnName: 'id_autor',
+                    bShowControls: false,
+                    fnSelectionChanged: function (selection) {
+                        if (selection.fnGetSize() > 0) {
+                            id_autor = selection.fnGetIds();
+                            //alert(id_libro);
+                        }
+                    }
+                },
+                'fnRowCallback': function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+                    $(nRow).attr('id', 'tr' + aData['id_autor']);//asigna un id a cada fila
+                },
+                "aaSorting": [],
+                "bProcessing": true,
+                "bServerSide": true,
+                "sAjaxSource": '<?=base_url(); ?>_autores/datos_autores_json',
+                //"sPaginationType": 'bootstrap',
+                "oSearch": {'bCaseInsensitive': false},
+                "iDisplayLength": 5,
+                "fnServerData": function (sSource, aoData, fnCallback) {
+                    $.ajax
+                    ({
+                        'dataType': 'json',
+                        'type': 'POST',
+                        'url': sSource,
+                        'data': aoData,
+                        'success': fnCallback,
+                        'complete': function () {
+                            $('#b_editar, #b_borrar').attr('disabled', true);
+                        }
+                    });
+                },
+                "aoColumns": [
+                    {
+                        "mData": "id_autor",
+                        "bSearchable": false,
+                        "bSortable": true,
+                        "mRender": function (data, type, full) {
+                            return '<input type="checkbox" class="checkboxes" name="check_id" id="check_id" value="' + data + '"/>';
+                        }
+                    },
+                    {"mData": "nombre"},
+                    {"mData": "sigla"},
+                    {"mData": "tipo"},
+                    {"mData": "telefono"}
+                ]
+            }).columnFilter();
+
+            $('#tabla').on('click', 'tbody tr td .checkboxes', function () {
+                var boxes = $("input:checkbox");
+                boxes.not(this).attr('checked', false);
+
+                //jQuery.uniform.update(set);
+                $('tr').removeClass("selected");//Quitando el color celeste de toda la fila que estaba seleccionada anteriormente
+                if ($(".checkboxes").is(':checked')) {//Si hay un registro seleccionado
+                    $(this).parents('tr').addClass("selected");
+                    $('#b_editar, #b_borrar').attr('disabled', false);
+                } else {
+                    $('#b_editar, #b_borrar').attr('disabled', true);
+                }
+                //var checkall =$(this).parents('.portlet-body:eq(0)').find(':checkbox').attr('checked', this.checked);
+                //$.uniform.update(set);
+            });
+
+        });
+    </script>
+
+{% endblock jssextras %}

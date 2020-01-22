@@ -50,3 +50,7 @@ def manual(request):
     template_name = 'sipyet/apps/add.html'
     return render(request, template_name)
 #    return render(request, template_name='sapb/apps/dashboard.html')
+
+class PerfilUsuarioListarView(TemplateView):
+    template_name = 'sipyet/apps/usuario/perfil/listar.html'
+    #login_url = 'usuario:index'

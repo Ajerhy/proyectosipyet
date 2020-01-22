@@ -5,7 +5,8 @@ from django.contrib.auth.decorators import login_required
 #Usuario Login
 
 #Perfil Usuario
-from apps.usuario.view.views_perfil import LoginView,DashboardView,LogoutView,manual
+from apps.usuario.view.views_perfil import LoginView,DashboardView,LogoutView,manual,\
+    PerfilUsuarioListarView
 
     #LoginPerfilView,DashboardView,LogoutView,manual,UsuarioPerfilDetalleView1,UsuarioPerfilDetalleView,UsuarioPerfilEditarView,passwordusuarioview
 
@@ -19,4 +20,10 @@ urlpatterns = [
     path('logout/', LogoutView, name='logout'),
     #info ayuda
     path('menu/', manual, name='menu'),
+
+    #Perfil de Usuario
+    path('perfil/listar/', PerfilUsuarioListarView.as_view(), name='listar_perfil'),
+
+
+
 ]

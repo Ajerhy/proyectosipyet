@@ -1,0 +1,260 @@
+<aside class="right-side" id="right-side">
+
+    <section class="content-header">
+        <h1>
+            Sistema de Archivos
+            <small>AUTORES</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
+            <li>Autores</li>
+            <li class="active">Lista de Autores</li>
+        </ol>
+    </section>
+
+    <section id="content" class="content">
+        <div class="box">
+            <div class="box-header">
+                <h3 class="box-title">Lista de los Autores de los Archivos</h3>
+                <div class="box-tools pull-right">
+                    <div class="btn-group">
+                        <button onclick="nuevo()" class="btn btn-success"><i class="fa fa-plus"></i> Nuevo</button>
+                        <button id="b_editar" class="btn btn-info" onclick="modificar()" disabled="disabled"><i
+                                class="fa fa-pencil-square-o"></i> Modificar
+                        </button>
+                        <button id="b_borrar" class="btn btn-danger" onclick="eliminar()" disabled="disabled"><i
+                                class="fa fa-trash-o"></i> Eliminar
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="box-body">
+                <div class="table-container">
+                    <div id="tabla_wrapper" class="dataTables_wrapper">
+                        <div class="dataTables_length" id="tabla_length"><label>Mostrar <select name="tabla_length"
+                                                                                                aria-controls="tabla"
+                                                                                                class="">
+                            <option value="10">10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select> registros</label></div>
+                        <div id="tabla_filter" class="dataTables_filter"><label>Buscar:<input type="search" class=""
+                                                                                              placeholder=""
+                                                                                              aria-controls="tabla"></label>
+                        </div>
+                        <div id="tabla_processing" class="dataTables_processing" style="display: none;">Procesando...
+                        </div>
+                        <table id="tabla"
+                               class="table table-striped table-bordered table-hover table-condensed dataTable dtr-inline"
+                               role="grid" aria-describedby="tabla_info" style="width: 100%;" width="100%">
+                            <thead>
+                            <tr role="row" class="heading">
+                                <th class="sorting_desc" tabindex="0" aria-controls="tabla" rowspan="1" colspan="1"
+                                    style="width: 26px;" aria-sort="descending"
+                                    aria-label="#: activate to sort column ascending" width="5%">#
+                                </th>
+                                <th class="sorting" tabindex="0" aria-controls="tabla" rowspan="1" colspan="1"
+                                    style="width: 335px;" aria-label="NOMBRE: activate to sort column ascending"
+                                    width="35%">NOMBRE
+                                </th>
+                                <th class="sorting" tabindex="0" aria-controls="tabla" rowspan="1" colspan="1"
+                                    style="width: 229px;" aria-label="SIGLA: activate to sort column ascending"
+                                    width="25%">SIGLA
+                                </th>
+                                <th class="sorting" tabindex="0" aria-controls="tabla" rowspan="1" colspan="1"
+                                    style="width: 229px;" aria-label="TIPO: activate to sort column ascending"
+                                    width="25%">TIPO
+                                </th>
+                                <th class="sorting" tabindex="0" aria-controls="tabla" rowspan="1" colspan="1"
+                                    style="width: 70px;" aria-label="TELEFONO: activate to sort column ascending"
+                                    width="25%">TELEFONO
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr role="row" class="odd" id="tr1">
+                                <td class="sorting_1"><input type="checkbox" class="checkboxes" name="check_id"
+                                                             id="check_id" value="1"></td>
+                                <td>Alejandro</td>
+                                <td>S/S</td>
+                                <td>PERSONA</td>
+                                <td></td>
+                            </tr>
+                            </tbody>
+                            <tfoot>
+                            <tr>
+                                <th rowspan="1" colspan="1" width="5%"><span class="filter_column filter_text"><input
+                                        type="text" class="search_init text_filter form-control" value="#"
+                                        rel="0"></span></th>
+                                <th rowspan="1" colspan="1" width="35%"><span class="filter_column filter_text"><input
+                                        type="text" class="search_init text_filter form-control" value="NOMBRE" rel="1"></span>
+                                </th>
+                                <th rowspan="1" colspan="1" width="25%"><span class="filter_column filter_text"><input
+                                        type="text" class="search_init text_filter form-control" value="SIGLA" rel="2"></span>
+                                </th>
+                                <th rowspan="1" colspan="1" width="25%"><span class="filter_column filter_text"><input
+                                        type="text" class="search_init text_filter form-control" value="TIPO"
+                                        rel="3"></span></th>
+                                <th rowspan="1" colspan="1" width="25%"><span class="filter_column filter_text"><input
+                                        type="text" class="search_init text_filter form-control" value="TELEFONO"
+                                        rel="4"></span></th>
+                            </tr>
+                            <tr>
+                                <th colspan="5" rowspan="1">
+
+                                </th>
+                            </tr>
+                            </tfoot>
+                        </table>
+                        <div class="dataTables_info" id="tabla_info" role="status" aria-live="polite">Mostrando 1 a 1 de
+                            1 registros
+                        </div>
+                        <div class="dataTables_paginate paging_simple_numbers" id="tabla_paginate"><a
+                                class="paginate_button previous disabled" aria-controls="tabla" data-dt-idx="0"
+                                tabindex="0" id="tabla_previous">Anterior</a><span><a class="paginate_button current"
+                                                                                      aria-controls="tabla"
+                                                                                      data-dt-idx="1" tabindex="0">1</a></span><a
+                                class="paginate_button next disabled" aria-controls="tabla" data-dt-idx="2" tabindex="0"
+                                id="tabla_next">Siguiente</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script type="text/javascript">
+        function nuevo() {
+            $('#nuevo_autor_link').click();
+        }
+
+        function modificar() {
+            var id = $('#check_id:checked').val();
+            if (!$(".checkboxes").is(':checked')) {
+                toastr.warning("Seleccione un Autor de la lista por favor!", "Aviso del Sistema");
+
+            } else {
+                $('#divNuevoAutor').html('');
+                $.blockUI({message: '<h5><img src="http://localhost/archivo/libs/img/ajax-loader.gif" /> Cargando espere por favor...</h5>'});
+                $('#divNuevoAutor').load("http://localhost/archivo/_autores/nuevo_view", {id_autor: id}, function () {
+                    $.unblockUI();
+                    $('#divNuevoAutor').modal();
+                });
+            }
+        }
+
+        function eliminar() {
+            var id = $('#check_id:checked').val();
+            if (!$(".checkboxes").is(':checked')) {
+                toastr.warning("Seleccione un Autor de la lista por favor!", "Aviso del Sistema");
+            } else {
+                bootbox.confirm("Esta seguro de eliminar el Autor seleccionado?", function (result) {
+                    if (result) {
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost/archivo/_autores/eliminar",
+                            data: {"id": id},
+                            dataType: "json",
+                            success: function (datas) {
+                                if (datas.estado == "success") {
+                                    if (oTable != undefined) {
+                                        oTable.fnReloadAjax();
+                                    }
+                                    toastr.success(datas.mensaje, "Notificaci&oacute;n del Sistema");
+                                    $("#tr" + id).slideUp();
+                                    $('#b_editar').removeClass('btn-info');
+                                    $('#b_editar').addClass('btn-default');
+                                    $('#b_borrar').removeClass('btn-danger');
+                                    $('#b_borrar').addClass('btn-default');
+                                } else {
+                                    toastr.error(datas.mensaje, "Notificaci&oacute;n del Sistema");
+                                }
+                            }
+                        }).done(function (msg) {
+                            //alert( "Codigo Ejecutado! " + msg );
+                        }).fail(function (jqXHR, textStatus) {
+                            toastr.error("Error al procesar su solicitud!", "Notificaci&oacute;n del Sistema");
+                        });
+                    }
+                });
+
+            }
+        }
+
+        var id_autor = 0;
+        var oTable;
+        jQuery(document).ready(function () {
+
+            oTable = $('#tabla').dataTable({
+                "responsive": true,
+                "order": [[0, "desc"]],
+                sDom: 'lfrtipL',
+                oSelectable: {
+                    bSingleRowSelect: true,
+                    iColNumber: 1,
+                    sIdColumnName: 'id_autor',
+                    bShowControls: false,
+                    fnSelectionChanged: function (selection) {
+                        if (selection.fnGetSize() > 0) {
+                            id_autor = selection.fnGetIds();
+                            //alert(id_libro);
+                        }
+                    }
+                },
+                'fnRowCallback': function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+                    $(nRow).attr('id', 'tr' + aData['id_autor']);//asigna un id a cada fila
+                },
+                "aaSorting": [],
+                "bProcessing": true,
+                "bServerSide": true,
+                "sAjaxSource": 'http://localhost/archivo/_autores/datos_autores_json',
+                //"sPaginationType": 'bootstrap',
+                "oSearch": {'bCaseInsensitive': false},
+                "iDisplayLength": 5,
+                "fnServerData": function (sSource, aoData, fnCallback) {
+                    $.ajax
+                    ({
+                        'dataType': 'json',
+                        'type': 'POST',
+                        'url': sSource,
+                        'data': aoData,
+                        'success': fnCallback,
+                        'complete': function () {
+                            $('#b_editar, #b_borrar').attr('disabled', true);
+                        }
+                    });
+                },
+                "aoColumns": [
+                    {
+                        "mData": "id_autor",
+                        "bSearchable": false,
+                        "bSortable": true,
+                        "mRender": function (data, type, full) {
+                            return '<input type="checkbox" class="checkboxes" name="check_id" id="check_id" value="' + data + '"/>';
+                        }
+                    },
+                    {"mData": "nombre"},
+                    {"mData": "sigla"},
+                    {"mData": "tipo"},
+                    {"mData": "telefono"}
+                ]
+            }).columnFilter();
+
+            $('#tabla').on('click', 'tbody tr td .checkboxes', function () {
+                var boxes = $("input:checkbox");
+                boxes.not(this).attr('checked', false);
+
+                //jQuery.uniform.update(set);
+                $('tr').removeClass("selected");//Quitando el color celeste de toda la fila que estaba seleccionada anteriormente
+                if ($(".checkboxes").is(':checked')) {//Si hay un registro seleccionado
+                    $(this).parents('tr').addClass("selected");
+                    $('#b_editar, #b_borrar').attr('disabled', false);
+                } else {
+                    $('#b_editar, #b_borrar').attr('disabled', true);
+                }
+                //var checkall =$(this).parents('.portlet-body:eq(0)').find(':checkbox').attr('checked', this.checked);
+                //$.uniform.update(set);
+            });
+
+        });
+    </script>
+</aside>

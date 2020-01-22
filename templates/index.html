@@ -28,7 +28,16 @@
         <div class="modal fade" id="divNuevoti" tabindex="-1" role="dialog" aria-hidden="true" data-width="400"></div>
 
         <aside class="right-side" id="right-side">
-            {% block contenido %}   {% endblock contenido %}
+            <section class="content-header">
+                {% block titulo-contenido %}
+                {% endblock titulo-contenido %}
+            </section>
+            <section id="content" class="content">
+                {% block contenido %}
+                {% endblock contenido %}
+            </section>
+            {% include "base/footer.html" %}
         </aside>
+
     </div>
 {% endblock content %}

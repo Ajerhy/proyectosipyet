@@ -9,250 +9,247 @@
 {% block csssextras %}
 {% endblock csssextras %}
 
+{% block titulo-contenido %}
+    <h1>Principal</h1>
+    <ol class="breadcrumb">
+        <li>
+            <a href="#"><i class="fa fa-dashboard"></i>Inicio</a>
+        </li>
+        <li class="active">Men&uacute; principal</li>
+    </ol>
+{% endblock titulo-contenido %}
 
 {% block contenido %}
-        <!--
-        <section class="content-header">
-            <h1>
-                Sistema de Archivo Hist&oacute;rico
-                <small>Bienvenido</small>
-            </h1>
-            <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li class="active">Blank page</li>
-            </ol>
-        </section>
-        -->
-        <section class="content-header">
-            <h1>Principal</h1>
-            <ol class="breadcrumb">
-                <li>
-                    <a href="#"><i class="fa fa-dashboard"></i>Inicio</a>
-                </li>
-                <li class="active">Men&uacute; principal</li>
-            </ol>
-        </section>
-        <!-- END PAGE TITLE & BREADCRUMB-->
-        <!-- BEGIN PAGE CONTENT-->
-        <section id="content" class="content">
-            <h4 class="page-header">Mostrar listados</h4>
-            <div class="row">
-                <div class="col-lg-4 col-xs-6" title="Ver listado de colecciones">
-                    <div class="small-box bg-aqua">
-                        <div class="icon">
-                            <i class="fa fa-folder-open"></i>
-                        </div>
-                        <div class="inner">
-                            <h3>0</h3>
-                            <p>Colecciones</p>
-                        </div>
-                        <a class="small-box-footer menu_load_panel" href="#" data="_colecciones/listar">Ver listado
-                            <i class="fa fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-xs-6" title="Ver listado de autores">
-                    <div class="small-box bg-green">
-                        <div class="icon">
-                            <i class="fa fa-male"></i>
-                        </div>
-                        <div class="inner">
-                            <h3>0</h3>
-                            <p>Autores</p>
-                        </div>
-                        <a class="small-box-footer menu_load_panel" href="#" data="_autores/listar_autores">Ver
-                            listado <i class="fa fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-xs-6" title="Ver listado de localidades">
-                    <div class="small-box bg-yellow">
-                        <div class="icon">
-                            <i class="fa fa-map-marker"></i>
-                        </div>
-                        <div class="inner">
-                            <h3>0</h3>
-                            <p>Localidades</p>
-                        </div>
-                        <a class="small-box-footer menu_load_panel" href="#" data="_localidades/listar_localidades">Ver
-                            listado <i class="fa fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
+    <h4 class="page-header">Mostrar listados</h4>
+
+    <div class="row">
+        <div class="col-lg-12 col-xs-12">
+            <div class="alert alert-info alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <p style="font-size:15px">
+                    <i class="icon fa fa-user"></i> Bienvenido <strong>Sistema Webs</strong> de Parqueo y
+                    Estacionamiento Tahuamanu. <i class="fa fa-anchor"></i>
+                </p>
             </div>
-            <div class="row">
-                <div class="col-lg-4 col-xs-6" title="Ver listado de tipos de ingreso">
-                    <div class="small-box bg-blue">
-                        <div class="icon">
-                            <i class="fa fa-bars"></i>
-                        </div>
-                        <div class="inner">
-                            <h3>0</h3>
-                            <p>Tipos de ingreso</p>
-                        </div>
-                        <a class="small-box-footer menu_load_panel" href="#" data="_tipoingresos/listar">Ver listado
-                            <i class="fa fa-arrow-circle-right"></i></a>
-                    </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-xs-6" title="Ver listado de colecciones">
+            <div class="small-box bg-aqua">
+                <div class="icon">
+                    <i class="fa fa-folder-open"></i>
                 </div>
-                <div class="col-lg-4 col-xs-6" title="Ver listado de tipos de colecci&oacute;n">
-                    <div class="small-box bg-teal">
-                        <div class="icon">
-                            <i class="fa fa-ellipsis-v"></i>
-                        </div>
-                        <div class="inner">
-                            <h3>0</h3>
-                            <p>Tipos de colecci&oacute;n</p>
-                        </div>
-                        <a class="small-box-footer menu_load_panel" href="#" data="_tipos/listar_tipos">Ver listado
-                            <i class="fa fa-arrow-circle-right"></i></a>
-                    </div>
+                <div class="inner">
+                    <h3>0</h3>
+                    <p>Colecciones</p>
                 </div>
-                <div class="col-lg-4 col-xs-6" title="Ver colecciones en linea de tiempo">
-                    <div class="small-box bg-aqua">
-                        <div class="icon">
-                            <i class="fa fa-clock-o"></i>
-                        </div>
-                        <div class="inner">
-                            <h3>0</h3>
-                            <p>L&iacute;nea de tiempo</p>
-                        </div>
-                        <a class="small-box-footer menu_load_panel" href="#" data="_reportes/time_line">Ver l&iacute;nea
-                            de tiempo <i class="fa fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
+                <a class="small-box-footer menu_load_panel" href="#" data="_colecciones/listar">Ver listado
+                    <i class="fa fa-arrow-circle-right"></i></a>
             </div>
-            <div class="row">
-                <div class="col-lg-4 col-xs-6" title="Ver reporte general">
-                    <div class="small-box bg-purple">
-                        <div class="icon">
-                            <i class="fa fa-bar-chart-o"></i>
-                        </div>
-                        <div class="inner">
-                            <h3>0</h3>
-                            <p>Reporte general</p>
-                        </div>
-                        <a class="small-box-footer menu_load_panel" href="#" data="_reportes/listar">Ver listado <i
-                                class="fa fa-arrow-circle-right"></i></a>
-                    </div>
+        </div>
+        <div class="col-lg-4 col-xs-6" title="Ver listado de autores">
+            <div class="small-box bg-green">
+                <div class="icon">
+                    <i class="fa fa-male"></i>
                 </div>
-                <div class="col-lg-4 col-xs-6">
-                    <div class="small-box bg-maroon">
-                        <div class="icon">
-                            <i class="fa fa-users"></i>
-                        </div>
-                        <div class="inner">
-                            <h3>1</h3>
-                            <p>Usuarios</p>
-                        </div>
-                        <a class="small-box-footer menu_load_panel" href="#" data="_usuarios/listar">Ver listado <i
-                                class="fa fa-arrow-circle-right"></i></a>
-                    </div>
+                <div class="inner">
+                    <h3>0</h3>
+                    <p>Autores</p>
                 </div>
-                <div class="col-lg-4 col-xs-6" title="Salir del sistema">
-                    <div class="small-box bg-red">
-                        <div class="icon">
-                            <i class="fa fa-power-off"></i>
-                        </div>
-                        <div class="inner">
-                            <h3>&nbsp;</h3>
-                            <p>Salir del sistema</p>
-                        </div>
-                        <a class="small-box-footer" href="http://localhost/archivo/_principal/logout">Salir del
-                            sistema <i class="fa fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
+                <a class="small-box-footer menu_load_panel" href="#" data="_autores/listar_autores">Ver
+                    listado <i class="fa fa-arrow-circle-right"></i></a>
             </div>
-            <h4 class="page-header">Adionar nuevos</h4>
-            <div class="row">
-                <div class="col-lg-4 col-xs-6" title="Adicionar nueva colecci&oacute;n">
-                    <div class="small-box bg-aqua">
-                        <div class="icon">
-                            <i class="fa fa-folder-open"></i>
-                        </div>
-                        <div class="inner">
-                            <h3>&nbsp;</h3>
-                            <p>Nueva colecci&oacute;n</p>
-                            <!--<p>Todos los pr&eacute;stamos</div>-->
-                        </div>
-                        <a class="small-box-footer menu_load_panel" href="#" data="_colecciones/nuevo"
-                           data_modal="true">Adicionar nueva <i class="fa fa-arrow-circle-right"></i></a>
-                    </div>
+        </div>
+        <div class="col-lg-4 col-xs-6" title="Ver listado de localidades">
+            <div class="small-box bg-yellow">
+                <div class="icon">
+                    <i class="fa fa-map-marker"></i>
                 </div>
-                <div class="col-lg-4 col-xs-6" title="Adicionar nuevo autor">
-                    <div class="small-box bg-green">
-                        <div class="icon">
-                            <i class="fa fa-user"></i>
-                        </div>
-                        <div class="inner">
-                            <h3>&nbsp;</h3>
-                            <p>Nuevo autor</p>
-                            <!--<p>Todos los pr&eacute;stamos</div>-->
-                        </div>
-                        <a class="small-box-footer menu_load_panel" href="#" data="_autores/nuevo_view"
-                           data_id_modal="#divNuevoAutor" data_modal="true">Adicionar nuevo <i
-                                class="fa fa-arrow-circle-right"></i></a>
-                    </div>
+                <div class="inner">
+                    <h3>0</h3>
+                    <p>Localidades</p>
                 </div>
-                <div class="col-lg-4 col-xs-6" title="Adicionar nueva localidad">
-                    <div class="small-box bg-yellow">
-                        <div class="icon">
-                            <i class="fa fa-map-marker"></i>
-                        </div>
-                        <div class="inner">
-                            <h3>&nbsp;</h3>
-                            <p>Nueva localidad</p>
-                            <!--<p>Todos los pr&eacute;stamos</div>-->
-                        </div>
-                        <a class="small-box-footer menu_load_panel" href="#" data="_localidades/nuevo_view"
-                           data_id_modal="#divNuevoLugar" data_modal="true">Adicionar nueva <i
-                                class="fa fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
+                <a class="small-box-footer menu_load_panel" href="#" data="_localidades/listar_localidades">Ver
+                    listado <i class="fa fa-arrow-circle-right"></i></a>
             </div>
-            <div class="row">
-                <div class="col-lg-4 col-xs-6" title="Adicionar nuevo tipo de ingreso">
-                    <div class="small-box bg-blue">
-                        <div class="icon">
-                            <i class="fa fa-bars"></i>
-                        </div>
-                        <div class="inner">
-                            <h3>&nbsp;</h3>
-                            <p>Nuevo tipo de ingreso</p>
-                            <!--<p>Todos los pr&eacute;stamos</div>-->
-                        </div>
-                        <a class="small-box-footer menu_load_panel" href="#" data="_tipoingresos/nuevo"
-                           data_id_modal="#divNuevoTipo" data_modal="true">Adicionar nuevo <i
-                                class="fa fa-arrow-circle-right"></i></a>
-                    </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-xs-6" title="Ver listado de tipos de ingreso">
+            <div class="small-box bg-blue">
+                <div class="icon">
+                    <i class="fa fa-bars"></i>
                 </div>
-                <div class="col-lg-4 col-xs-6" title="Adicionar nuevo tipo de colecci&oacute;n">
-                    <div class="small-box bg-teal">
-                        <div class="icon">
-                            <i class="fa fa-ellipsis-v"></i>
-                        </div>
-                        <div class="inner">
-                            <h3>&nbsp;</h3>
-                            <p>Nuevo tipo de colecci&oacute;n</p>
-                            <!--<p>Todos los pr&eacute;stamos</div>-->
-                        </div>
-                        <a class="small-box-footer menu_load_panel" href="#" data="_tipos/nuevo_view"
-                           data_id_modal="#divNuevoTipo" data_modal="true">Adicionar nuevo <i
-                                class="fa fa-arrow-circle-right"></i></a>
-                    </div>
+                <div class="inner">
+                    <h3>0</h3>
+                    <p>Tipos de ingreso</p>
                 </div>
-                <div class="col-lg-4 col-xs-6" title="Adicionar nuevo usuario">
-                    <div class="small-box bg-maroon">
-                        <div class="inner">
-                            <h3>&nbsp;</h3>
-                            <p>Nuevo usuario</p>
-                            <!--<p>Todos los pr&eacute;stamos</div>-->
-                        </div>
-                        <div class="icon">
-                            <i class="fa fa-user"></i>
-                        </div>
-                        <a class="small-box-footer menu_load_panel" href="#" data="_usuarios/nuevo"
-                           data_modal="true">Adicionar nuevo <i class="fa fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
+                <a class="small-box-footer menu_load_panel" href="#" data="_tipoingresos/listar">Ver listado
+                    <i class="fa fa-arrow-circle-right"></i></a>
             </div>
-        </section>
+        </div>
+        <div class="col-lg-4 col-xs-6" title="Ver listado de tipos de colecci&oacute;n">
+            <div class="small-box bg-teal">
+                <div class="icon">
+                    <i class="fa fa-ellipsis-v"></i>
+                </div>
+                <div class="inner">
+                    <h3>0</h3>
+                    <p>Tipos de colecci&oacute;n</p>
+                </div>
+                <a class="small-box-footer menu_load_panel" href="#" data="_tipos/listar_tipos">Ver listado
+                    <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <div class="col-lg-4 col-xs-6" title="Ver colecciones en linea de tiempo">
+            <div class="small-box bg-aqua">
+                <div class="icon">
+                    <i class="fa fa-clock-o"></i>
+                </div>
+                <div class="inner">
+                    <h3>0</h3>
+                    <p>L&iacute;nea de tiempo</p>
+                </div>
+                <a class="small-box-footer menu_load_panel" href="#" data="_reportes/time_line">Ver l&iacute;nea
+                    de tiempo <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-xs-6" title="Ver reporte general">
+            <div class="small-box bg-purple">
+                <div class="icon">
+                    <i class="fa fa-bar-chart-o"></i>
+                </div>
+                <div class="inner">
+                    <h3>0</h3>
+                    <p>Reporte general</p>
+                </div>
+                <a class="small-box-footer menu_load_panel" href="#" data="_reportes/listar">Ver listado <i
+                        class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <div class="col-lg-4 col-xs-6">
+            <div class="small-box bg-maroon">
+                <div class="icon">
+                    <i class="fa fa-users"></i>
+                </div>
+                <div class="inner">
+                    <h3>1</h3>
+                    <p>Usuarios</p>
+                </div>
+                <a class="small-box-footer menu_load_panel" href="#" data="_usuarios/listar">Ver listado <i
+                        class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <div class="col-lg-4 col-xs-6" title="Salir del sistema">
+            <div class="small-box bg-red">
+                <div class="icon">
+                    <i class="fa fa-power-off"></i>
+                </div>
+                <div class="inner">
+                    <h3>&nbsp;</h3>
+                    <p>Salir del sistema</p>
+                </div>
+                <a class="small-box-footer" href="http://localhost/archivo/_principal/logout">Salir del
+                    sistema <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <h4 class="page-header">Adionar nuevos</h4>
+    <div class="row">
+        <div class="col-lg-4 col-xs-6" title="Adicionar nueva colecci&oacute;n">
+            <div class="small-box bg-aqua">
+                <div class="icon">
+                    <i class="fa fa-folder-open"></i>
+                </div>
+                <div class="inner">
+                    <h3>&nbsp;</h3>
+                    <p>Nueva colecci&oacute;n</p>
+                    <!--<p>Todos los pr&eacute;stamos</div>-->
+                </div>
+                <a class="small-box-footer menu_load_panel" href="#" data="_colecciones/nuevo"
+                   data_modal="true">Adicionar nueva <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <div class="col-lg-4 col-xs-6" title="Adicionar nuevo autor">
+            <div class="small-box bg-green">
+                <div class="icon">
+                    <i class="fa fa-user"></i>
+                </div>
+                <div class="inner">
+                    <h3>&nbsp;</h3>
+                    <p>Nuevo autor</p>
+                    <!--<p>Todos los pr&eacute;stamos</div>-->
+                </div>
+                <a class="small-box-footer menu_load_panel" href="#" data="_autores/nuevo_view"
+                   data_id_modal="#divNuevoAutor" data_modal="true">Adicionar nuevo <i
+                        class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <div class="col-lg-4 col-xs-6" title="Adicionar nueva localidad">
+            <div class="small-box bg-yellow">
+                <div class="icon">
+                    <i class="fa fa-map-marker"></i>
+                </div>
+                <div class="inner">
+                    <h3>&nbsp;</h3>
+                    <p>Nueva localidad</p>
+                    <!--<p>Todos los pr&eacute;stamos</div>-->
+                </div>
+                <a class="small-box-footer menu_load_panel" href="#" data="_localidades/nuevo_view"
+                   data_id_modal="#divNuevoLugar" data_modal="true">Adicionar nueva <i
+                        class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-xs-6" title="Adicionar nuevo tipo de ingreso">
+            <div class="small-box bg-blue">
+                <div class="icon">
+                    <i class="fa fa-bars"></i>
+                </div>
+                <div class="inner">
+                    <h3>&nbsp;</h3>
+                    <p>Nuevo tipo de ingreso</p>
+                    <!--<p>Todos los pr&eacute;stamos</div>-->
+                </div>
+                <a class="small-box-footer menu_load_panel" href="#" data="_tipoingresos/nuevo"
+                   data_id_modal="#divNuevoTipo" data_modal="true">Adicionar nuevo <i
+                        class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <div class="col-lg-4 col-xs-6" title="Adicionar nuevo tipo de colecci&oacute;n">
+            <div class="small-box bg-teal">
+                <div class="icon">
+                    <i class="fa fa-ellipsis-v"></i>
+                </div>
+                <div class="inner">
+                    <h3>&nbsp;</h3>
+                    <p>Nuevo tipo de colecci&oacute;n</p>
+                    <!--<p>Todos los pr&eacute;stamos</div>-->
+                </div>
+                <a class="small-box-footer menu_load_panel" href="#" data="_tipos/nuevo_view"
+                   data_id_modal="#divNuevoTipo" data_modal="true">Adicionar nuevo <i
+                        class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <div class="col-lg-4 col-xs-6" title="Adicionar nuevo usuario">
+            <div class="small-box bg-maroon">
+                <div class="inner">
+                    <h3>&nbsp;</h3>
+                    <p>Nuevo usuario</p>
+                    <!--<p>Todos los pr&eacute;stamos</div>-->
+                </div>
+                <div class="icon">
+                    <i class="fa fa-user"></i>
+                </div>
+                <a class="small-box-footer menu_load_panel" href="#" data="_usuarios/nuevo"
+                   data_modal="true">Adicionar nuevo <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+    </div>
 {% endblock contenido %}
 
 

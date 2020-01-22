@@ -106,10 +106,23 @@
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="#" class="menu_load_panel" data="_usuarios/listar"><i
-                            class="fa fa-angle-double-right"></i> Listar Usuarios</a></li>
-                    <li><a href="#" id="nuevo_usuario_link" class="menu_load_panel" data="_usuarios/nuevo"
-                           data_modal="true"><i class="fa fa-angle-double-right"></i> Agregar Usuario</a></li>
+                    <li>
+                        <a href="{% url 'usuario:listar_perfil' %}" class="menu_load_panel" data="#">
+                            <i class="fa fa-angle-double-right"></i> Listar Perfil Usuarios
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="menu_load_panel" data="_usuarios/listar">
+                            <i class="fa fa-angle-double-right"></i> Listar Usuarios
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="nuevo_usuario_link" class="menu_load_panel" data="_usuarios/nuevo"
+                           data_modal="true">
+                            <i class="fa fa-angle-double-right"></i> Agregar Usuario
+                        </a>
+                    </li>
                     <li><a href="#" class="menu_load_panel" data="_usuarios/change_pass"
                            data_id_modal="#divCPass" data_modal="true"><i class="fa fa-angle-double-right"></i>
                         Cambiar mi Contrase&ntilde;a</a></li>
