@@ -1,0 +1,135 @@
+<!--
+{-% load staticfiles %}
+-->
+{% load static %}
+<!-- Left side column. contains the logo and sidebar -->
+<aside class="left-side sidebar-offcanvas">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+        <!-- Sidebar user panel -->
+        <div class="user-panel">
+            <div class="pull-left image">
+                <img src="{% static 'img/avatar5.png' %}" class="img-circle" alt="Imagen de Usuario"/>
+            </div>
+            <div class="pull-left info">
+                <p>Hola, admin</p>
+
+                <a href="#"><i class="fa fa-circle text-success"></i> En l&iacute;nea</a>
+            </div>
+        </div>
+        <!-- search form -->
+        <form action="http://localhost/archivo/_principal/buscar" method="POST" id="basic_search"
+              name="basic_search" class="sidebar-form">
+            <div class="input-group">
+                <input type="text" name="query" id="query" class="form-control"
+                       placeholder="Buscar colecci&oacute;n..."/>
+                <span class="input-group-btn">
+                                <button type="submit" id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
+                            </span>
+            </div>
+        </form>
+        <!-- /.search form -->
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu">
+            <li class="active">
+                <a href="{% url 'usuario:dashboard' %}">
+                    <i class="fa fa-dashboard"></i> <span>Inicio</span>
+                </a>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-file-text"></i>
+                    <span>Colecciones</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="#" class="menu_load_panel" data="_colecciones/listar"><i
+                            class="fa fa-angle-double-right"></i>Listar Colecciones</a></li>
+                    <li><a href="#" id="nuevo_archivo_link" class="menu_load_panel" data="_colecciones/nuevo"
+                           data_modal="true"><i class="fa fa-angle-double-right"></i>Agregar
+                        Colecci&oacute;n</a></li>
+                    <li><a href="#" class="menu_load_panel" data="_colecciones/search_view"><i
+                            class="fa fa-angle-double-right"></i>B&uacute;squeda avanzada</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-male"></i>
+                    <span>Autores</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="#" class="menu_load_panel" data="_autores/listar_autores"><i
+                            class="fa fa-angle-double-right"></i> Listar Autores</a></li>
+                    <li><a href="#" id="nuevo_autor_link" class="menu_load_panel" data="_autores/nuevo_view"
+                           data_id_modal="#divNuevoAutor" data_modal="true"><i
+                            class="fa fa-angle-double-right"></i> Agregar nuevo Autor</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-map-marker"></i>
+                    <span>Lugares</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="#" class="menu_load_panel" data="_localidades/listar_localidades"><i
+                            class="fa fa-angle-double-right"></i> Listar Lugares</a></li>
+                    <li><a href="#" id="nuevo_localidad_link" class="menu_load_panel"
+                           data="_localidades/nuevo_view" data_id_modal="#divNuevoLugar" data_modal="true"><i
+                            class="fa fa-angle-double-right"></i> Agregar nuevo Lugar</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-filter"></i>
+                    <span>Par&aacute;metros</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="#" class="menu_load_panel" data="_tipoingresos/listar"><i
+                            class="fa fa-angle-double-right"></i> Listar tipos de ingresos</a></li>
+                    <li><a href="#" id="nuevo_tipo_ingreso_link" class="menu_load_panel"
+                           data="_tipoingresos/nuevo" data_id_modal="#divNuevoTipo" data_modal="true"><i
+                            class="fa fa-angle-double-right"></i> Agregar tipo de ingreso</a></li>
+                    <li><a href="#" class="menu_load_panel" data="_tipos/listar_tipos"><i
+                            class="fa fa-angle-double-right"></i> Listar tipos de colecciones</a></li>
+                    <li><a href="#" id="nuevo_tipo_link" class="menu_load_panel" data="_tipos/nuevo_view"
+                           data_id_modal="#divNuevoTipo" data_modal="true"><i
+                            class="fa fa-angle-double-right"></i> Agregar tipo de colecci&oacute;n</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-users"></i>
+                    <span>Usuarios</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="#" class="menu_load_panel" data="_usuarios/listar"><i
+                            class="fa fa-angle-double-right"></i> Listar Usuarios</a></li>
+                    <li><a href="#" id="nuevo_usuario_link" class="menu_load_panel" data="_usuarios/nuevo"
+                           data_modal="true"><i class="fa fa-angle-double-right"></i> Agregar Usuario</a></li>
+                    <li><a href="#" class="menu_load_panel" data="_usuarios/change_pass"
+                           data_id_modal="#divCPass" data_modal="true"><i class="fa fa-angle-double-right"></i>
+                        Cambiar mi Contrase&ntilde;a</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-table"></i>
+                    <span>Reportes</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="#" class="menu_load_panel" data="_reportes/time_line"><i
+                            class="fa fa-angle-double-right"></i> Linea de Tiempo</a></li>
+                    <li><a href="#" class="menu_load_panel" data="_reportes/listar"><i
+                            class="fa fa-angle-double-right"></i> Reportes personalizados</a></li>
+
+                </ul>
+            </li>
+        </ul>
+    </section>
+    <!-- /.sidebar -->
+</aside>

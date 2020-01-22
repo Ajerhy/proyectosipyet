@@ -21,7 +21,8 @@
                                 <span class="input-group-addon">
                                         <i class="fa fa-user"></i>
                                 </span>
-                            <input type="text" name="usuario" id="usuario" class="form-control" placeholder="Nombre de Usuario"></input>
+                            <input type="text" name="usuario" id="usuario" class="form-control"
+                                   placeholder="Nombre de Usuario"></input>
                         </div>
                     </div>
                 </div>
@@ -32,39 +33,31 @@
                             <div class="input-group-addon">
                                 <i class="fa fa-lock"></i>
                             </div>
-                            <input type="password" name="clave" class="form-control" placeholder="Aqu&iacute; su Contrase&ntilde;a"/>
+                            <input type="password" name="clave" class="form-control"
+                                   placeholder="Aqu&iacute; su Contrase&ntilde;a"/>
                         </div>
                     </div>
                 </div>
-                <!--
-                <div class="form-group">
-                    <input type="checkbox" name="remember_me"/> Remember me
-                </div>
-                -->
             </div>
             <div class="footer">
                 <button type="submit" class="btn bg-olive btn-block">Ingresar</button>
-                <!--
-                <p><a href="#">Yo olvide mi Contrase&ntilde;a</a></p>
-                <a href="register.html" class="text-center">Registrar un nuevo Usuario</a>
-                -->
+                <p><a href="{% url 'usuario:dashboard' %}">Dashboard</a></p>
+                <p><a href="{% url 'usuario:menu' %}">Menu</a></p>
             </div>
         </form>
 
         <div class="margin text-center">
-            <span>&copy;
-                    <script>
-                document.write(new Date().getFullYear())
-            </script> &copy; Sistema de Parqueo y Estacionamiento Tahuamanu</span>
+            <span><script>document.write(new Date().getFullYear())</script> &copy; Sistema de Parqueo y Estacionamiento Tahuamanu</span>
         </div>
+
     </div>
 {% endblock content %}
 {% block jssextras %}
-    <script type="text/javascript">
-        jQuery(document).ready(function () {
+   <script type="text/javascript">
+        jQuery(document).ready(function() {
             $("#usuario").focus();
             $("#login_form").validate({
-                rules: {
+                rules:{
                     usuario: {
                         required: true
                     },
@@ -72,31 +65,31 @@
                         required: true
                     }
                 },
-                messages: {
-                    usuario: {
+                messages:{
+                    usuario:{
                         required: "El nombre de usuario es requerido!"
                     },
-                    clave: {
+                    clave:{
                         required: "La Contrase&ntilde;a es requerida!"
                     }
                 },
-                submitHandler: function (form) {
+                submitHandler: function(form) {
                     $.ajax({
-                        type: "POST",
-                        url: $("#login_form").attr("action"),
-                        data: $("#login_form").serialize(),
-                        dataType: "json",
-                        success: function (datax) {
-                            if (datax.estado == "success") {
-                                window.location.replace("<?=base_url()?>_principal/index");
-                            } else {
-                                toastr[datax.estado](datax.mensaje, 'Aviso del Sistema');
-                            }
+                      type: "POST",
+                      url: $("#login_form").attr("action"),
+                      data: $("#login_form").serialize(),
+                      dataType: "json",
+                      success: function(datax){
+                        if(datax.estado=="success"){
+                            window.location.replace("/archivo/_principal/index");
+                        }else{
+                            toastr[datax.estado](datax.mensaje,'Aviso del Sistema');
                         }
-                    }).done(function (msg) {
+                      }
+                    }).done(function( msg ) {
 
-                    }).fail(function (jqXHR, textStatus) {
-                        toastr.error("Fallo por error desconocido!!", 'Aviso del Sistema');
+                    }).fail(function( jqXHR, textStatus ) {
+                        toastr.error("Fallo por error desconocido!!",'Aviso del Sistema');
                     });
                 }
             });

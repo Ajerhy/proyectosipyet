@@ -2401,6 +2401,15 @@ Component: timeline
 .form-box {
   width: 360px;
   margin: 90px auto 0 auto;
+  /*######################*/
+  -webkit-box-shadow: 2px 2px 10px 2px rgba(0,0,0,1);
+  -moz-box-shadow: 2px 2px 10px 2px rgba(0,0,0,1);
+  box-shadow: 2px 2px 10px 2px rgba(0,0,0,1);
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border: 0px solid #000000;
+  /*######################*/
 }
 .form-box .header {
   -webkit-border-top-left-radius: 4px;
@@ -2415,8 +2424,11 @@ Component: timeline
   border-top-right-radius: 4px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
+  /*
+  #
+  #
+  */
   background: #3d9970;
-  box-shadow: inset 0px -3px 0px rgba(0, 0, 0, 0.2);
   padding: 20px 10px;
   text-align: center;
   font-size: 26px;

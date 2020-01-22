@@ -6,32 +6,29 @@
 {% load static %}
 
 {% block content %}
-    <div class="wrapper">
+    <!-- End Barra Header -->
+    {% include "base/header.html" %}
+    <!-- End Barra Header -->
 
-        {% block sidebar %}
-            <!-- End Barra SideBar -->
-            {% include "base/sidebar.html" %}
-            <!-- End Barra SideBar -->
-        {% endblock %}
-        <div class="main-panel">
-            {% block nav %}
-                <!-- Barra Navegacion Nav -->
-                {% include "base/navbar.html" %}
-                <!-- End Barra Navegacion Nav -->
-            {% endblock nav %}
+    <div class="wrapper row-offcanvas row-offcanvas-left">
 
-            <div class="content">
-                <div class="container-fluid">
-                    {% block contenido %}   {% endblock contenido %}
-                </div>
-            </div>
+        <!-- End Barra Aside -->
+        {% include "base/aside.html" %}
+        <!-- End Barra Aside -->
 
-            {% block footer %}
-                <!-- Footer -->
-                {% include "base/footer.html" %}
-                <!-- End Footer -->
-            {% endblock footer %}
-        </div>
+        <!-- Right side column. Contains the navbar and content of the page -->
+        <div class="modal fade" id="divNuevo" tabindex="-1" role="dialog" aria-hidden="true" data-width="400"></div>
+        <div class="modal fade" id="divEditar" tabindex="-1" role="dialog" aria-hidden="true" data-width="400"></div>
+        <div class="modal fade" id="divCPass" tabindex="-1" role="dialog" aria-hidden="true" data-width="400"></div>
+        <div class="modal fade" id="divNuevoTipo" tabindex="-1" role="dialog" aria-hidden="true" data-width="400"></div>
+        <div class="modal fade" id="divNuevoAutor" tabindex="-1" role="dialog" aria-hidden="true"
+             data-width="400"></div>
+        <div class="modal fade" id="divNuevoLugar" tabindex="-1" role="dialog" aria-hidden="true"
+             data-width="400"></div>
+        <div class="modal fade" id="divNuevoti" tabindex="-1" role="dialog" aria-hidden="true" data-width="400"></div>
 
+        <aside class="right-side" id="right-side">
+            {% block contenido %}   {% endblock contenido %}
+        </aside>
     </div>
 {% endblock content %}

@@ -1,0 +1,74 @@
+<!--
+{-% load staticfiles %}
+-->
+{% load static %}
+<!-- header logo: style can be found in header.less -->
+<header class="header">
+    <a href="{% url 'usuario:dashboard' %}" class="logo">
+        <img src="{% static 'img/archivos1.png' %}">
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top" role="navigation">
+        <!-- Sidebar toggle button-->
+        <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+        <div class="navbar-right">
+            <ul class="nav navbar-nav">
+                <!-- Messages: style can be found in dropdown.less-->
+
+                <!-- Notifications: style can be found in dropdown.less -->
+
+                <!-- Tasks: style can be found in dropdown.less -->
+
+                <!-- User Account: style can be found in dropdown.less -->
+                <li class="dropdown user user-menu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="glyphicon glyphicon-user"></i>
+                        <span>admin<i class="caret"></i></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <!-- User image -->
+                        <li class="user-header bg-light-blue">
+                            <img src="http://localhost/archivo/libs/img/avatar5.png" class="img-circle"
+                                 alt="User Image"/>
+                            <p>
+                                ADMINISTRADOR <small>
+                                Super Administrador </small>
+                            </p>
+                        </li>
+                        <!-- Menu Body -->
+                        <!--
+<li class="user-body">
+                            <div class="col-xs-4 text-center">
+                                <a href="#">Followers</a>
+                            </div>
+                            <div class="col-xs-4 text-center">
+                                <a href="#">Sales</a>
+                            </div>
+                            <div class="col-xs-4 text-center">
+                                <a href="#">Friends</a>
+                            </div>
+                        </li>
+-->
+                        <!-- Menu Footer-->
+                        <li class="user-footer">
+                            <div class="pull-left">
+                                <a href="#" data="_usuarios/change_pass" data_id_modal="#divCPass" data_modal="true"
+                                   class="btn btn-default btn-flat menu_load_panel"
+                                   title="Cambiar Contrase&ntilde;a">C. Contrase&ntilde;a</a>
+                            </div>
+                            <div class="pull-right">
+                                <a href="http://localhost/archivo/_principal/logout"
+                                   class="btn btn-default btn-flat">Cerrar Sesi&oacute;n</a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>

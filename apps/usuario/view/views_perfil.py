@@ -47,5 +47,6 @@ def LogoutView(request):
 
 #manual
 def manual(request):
-    return render(request, template_name='index.html')
+    template_name = 'sipyet/apps/add.html'
+    return render(request, template_name)
 #    return render(request, template_name='sapb/apps/dashboard.html')

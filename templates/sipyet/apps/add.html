@@ -1,58 +1,601 @@
-
+<!--
+{-% load staticfiles %}
+-->
+{% load static %}
 <!DOCTYPE html>
-<html lang="es">
+<html>
+
 <head>
-  <meta charset="UTF-8">
-  <title>Sistema Seecorp</title>
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta charset="UTF-8"/>
+    <title>Sistema de Archivos Historicos de Tarija</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"-->
+    <meta name="description" content="Sistema de Parqueo y Estacionamiento Tahuamanu.">
+    <meta name="author" content="Ajerhy Inc">
 
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
+    <link href="{% static 'libs/bootstrap-3.2.0/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'libs/font-awesome-4.1.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'libs/js/plugins/dataTables/media/css/jquery.dataTables.min.css' %}"/>
+    <!--
+    <link rel="stylesheet" type="text/css" href="{% static 'js/plugins/dataTables/plugins/bootstrap/dataTables.bootstrap.css' %}" />
+    -->
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'libs/js/plugins/dataTables/media/css/dataTables.responsive.css' %}"/>
+
+    <!--<link rel="stylesheet" type="text/css" href="{% static 'libs/js/plugins/dataTables/media/css/jquery.dataTables_themeroller.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'libs/js/plugins/timeline/css/flat.css' %}" />
+    -->
+
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{% static 'libs/js/plugins/timelinr/css/style.css' %}" media="screen"/>
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'libs/js/plugins/bootstrap-fileinput/bootstrap-fileinput.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'libs/js/plugins/bootstrap-toastr/toastr.min.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'libs/js/plugins/select2/select2.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'libs/js/plugins/select2/select2-bootstrap.css' %}"/>
+    <link href="{% static 'libs/css/AdminLTE.css' %}" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'libs/js/plugins/bootstrap-datepicker/css/datepicker3.css' %}"/>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
 </head>
-<body>
-<div class="row">
-    <div class="col-md-12">
-        <div class="container-fluid">
-            <section>
-                <hr>
-                    		
-	 <div class="head">
-	      <div class="row">
-				<div class="col-md-12">
-				<ol class="breadcrumb ">
-				  <li class="breadcrumb-item active animated fadeInLeft">Aplicacion de Login</li>
-				</ol>
-					<section class="header animated fadeInDown">
-					  <h1>Login</h1>
-					</section>
-					<div class="main">
-						<div class="form-group">
-							<form action="index.php" method="post">
-								<section class="	">
-								<div class="input-group margin-bottom-sm input">
-								  <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
-								  <input name="nombre" class="form-control" type="text" placeholder="Nombre  Usuario" required="">
-								</div><br>
-									<div class="input-group">
-									  <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
-									  <input name="password" class="form-control" type="password" placeholder="Password" required="">
-									</div><br>
-							<div class="alert alert-danger">Error al ingresar</div>									<input  type="submit" name="submit" class="btn btn-outline-primary btn-block">								</section>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-</div>
 
-            </section>
+<body class="skin-blue">
+<!-- header logo: style can be found in header.less -->
+<header class="header">
+    <a href="http://localhost/archivo/" class="logo">
+        <img src="{% static 'img/archivos1.png' %}">
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top" role="navigation">
+        <!-- Sidebar toggle button-->
+        <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+        <div class="navbar-right">
+            <ul class="nav navbar-nav">
+                <!-- Messages: style can be found in dropdown.less-->
 
+                <!-- Notifications: style can be found in dropdown.less -->
+
+                <!-- Tasks: style can be found in dropdown.less -->
+
+                <!-- User Account: style can be found in dropdown.less -->
+                <li class="dropdown user user-menu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="glyphicon glyphicon-user"></i>
+                        <span>admin<i class="caret"></i></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <!-- User image -->
+                        <li class="user-header bg-light-blue">
+                            <img src="http://localhost/archivo/libs/img/avatar5.png" class="img-circle"
+                                 alt="User Image"/>
+                            <p>
+                                ADMINISTRADOR <small>
+                                Super Administrador </small>
+                            </p>
+                        </li>
+                        <!-- Menu Body -->
+                        <!--
+<li class="user-body">
+                            <div class="col-xs-4 text-center">
+                                <a href="#">Followers</a>
+                            </div>
+                            <div class="col-xs-4 text-center">
+                                <a href="#">Sales</a>
+                            </div>
+                            <div class="col-xs-4 text-center">
+                                <a href="#">Friends</a>
+                            </div>
+                        </li>
+-->
+                        <!-- Menu Footer-->
+                        <li class="user-footer">
+                            <div class="pull-left">
+                                <a href="#" data="_usuarios/change_pass" data_id_modal="#divCPass" data_modal="true"
+                                   class="btn btn-default btn-flat menu_load_panel" title="Cambiar Contrase&ntilde;a">C.
+                                    Contrase&ntilde;a</a>
+                            </div>
+                            <div class="pull-right">
+                                <a href="http://localhost/archivo/_principal/logout" class="btn btn-default btn-flat">Cerrar
+                                    Sesi&oacute;n</a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
         </div>
-    </div>
+    </nav>
+</header>
 
+<div class="wrapper row-offcanvas row-offcanvas-left">
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="left-side sidebar-offcanvas">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+            <!-- Sidebar user panel -->
+            <div class="user-panel">
+                <div class="pull-left image">
+                    <img src="http://localhost/archivo/libs/img/avatar5.png" class="img-circle" alt="User Image"/>
+                </div>
+                <div class="pull-left info">
+                    <p>Hola, admin</p>
+
+                    <a href="#"><i class="fa fa-circle text-success"></i> En l&iacute;nea</a>
+                </div>
+            </div>
+            <!-- search form -->
+            <form action="http://localhost/archivo/_principal/buscar" method="POST" id="basic_search"
+                  name="basic_search" class="sidebar-form">
+                <div class="input-group">
+                    <input type="text" name="query" id="query" class="form-control"
+                           placeholder="Buscar colecci&oacute;n..."/>
+                    <span class="input-group-btn">
+                                <button type="submit" id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
+                            </span>
+                </div>
+            </form>
+            <!-- /.search form -->
+            <!-- sidebar menu: : style can be found in sidebar.less -->
+            <ul class="sidebar-menu">
+                <li class="active">
+                    <a href="http://localhost/archivo/_principal/index">
+                        <i class="fa fa-dashboard"></i> <span>Inicio</span>
+                    </a>
+                </li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-file-text"></i>
+                        <span>Colecciones</span>
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="#" class="menu_load_panel" data="_colecciones/listar"><i
+                                class="fa fa-angle-double-right"></i>Listar Colecciones</a></li>
+                        <li><a href="#" id="nuevo_archivo_link" class="menu_load_panel" data="_colecciones/nuevo"
+                               data_modal="true"><i class="fa fa-angle-double-right"></i>Agregar Colecci&oacute;n</a>
+                        </li>
+                        <li><a href="#" class="menu_load_panel" data="_colecciones/search_view"><i
+                                class="fa fa-angle-double-right"></i>B&uacute;squeda avanzada</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-male"></i>
+                        <span>Autores</span>
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="#" class="menu_load_panel" data="_autores/listar_autores"><i
+                                class="fa fa-angle-double-right"></i> Listar Autores</a></li>
+                        <li><a href="#" id="nuevo_autor_link" class="menu_load_panel" data="_autores/nuevo_view"
+                               data_id_modal="#divNuevoAutor" data_modal="true"><i class="fa fa-angle-double-right"></i>
+                            Agregar nuevo Autor</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-map-marker"></i>
+                        <span>Lugares</span>
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="#" class="menu_load_panel" data="_localidades/listar_localidades"><i
+                                class="fa fa-angle-double-right"></i> Listar Lugares</a></li>
+                        <li><a href="#" id="nuevo_localidad_link" class="menu_load_panel" data="_localidades/nuevo_view"
+                               data_id_modal="#divNuevoLugar" data_modal="true"><i class="fa fa-angle-double-right"></i>
+                            Agregar nuevo Lugar</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-filter"></i>
+                        <span>Par&aacute;metros</span>
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="#" class="menu_load_panel" data="_tipoingresos/listar"><i
+                                class="fa fa-angle-double-right"></i> Listar tipos de ingresos</a></li>
+                        <li><a href="#" id="nuevo_tipo_ingreso_link" class="menu_load_panel" data="_tipoingresos/nuevo"
+                               data_id_modal="#divNuevoTipo" data_modal="true"><i class="fa fa-angle-double-right"></i>
+                            Agregar tipo de ingreso</a></li>
+                        <li><a href="#" class="menu_load_panel" data="_tipos/listar_tipos"><i
+                                class="fa fa-angle-double-right"></i> Listar tipos de colecciones</a></li>
+                        <li><a href="#" id="nuevo_tipo_link" class="menu_load_panel" data="_tipos/nuevo_view"
+                               data_id_modal="#divNuevoTipo" data_modal="true"><i class="fa fa-angle-double-right"></i>
+                            Agregar tipo de colecci&oacute;n</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-users"></i>
+                        <span>Usuarios</span>
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="#" class="menu_load_panel" data="_usuarios/listar"><i
+                                class="fa fa-angle-double-right"></i> Listar Usuarios</a></li>
+                        <li><a href="#" id="nuevo_usuario_link" class="menu_load_panel" data="_usuarios/nuevo"
+                               data_modal="true"><i class="fa fa-angle-double-right"></i> Agregar Usuario</a></li>
+                        <li><a href="#" class="menu_load_panel" data="_usuarios/change_pass" data_id_modal="#divCPass"
+                               data_modal="true"><i class="fa fa-angle-double-right"></i> Cambiar mi
+                            Contrase&ntilde;a</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-table"></i>
+                        <span>Reportes</span>
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="#" class="menu_load_panel" data="_reportes/time_line"><i
+                                class="fa fa-angle-double-right"></i> Linea de Tiempo</a></li>
+                        <li><a href="#" class="menu_load_panel" data="_reportes/listar"><i
+                                class="fa fa-angle-double-right"></i> Reportes personalizados</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <!-- /.sidebar -->
+    </aside>            <!-- Right side column. Contains the navbar and content of the page -->
+    <div class="modal fade" id="divNuevo" tabindex="-1" role="dialog" aria-hidden="true" data-width="400"></div>
+    <div class="modal fade" id="divEditar" tabindex="-1" role="dialog" aria-hidden="true" data-width="400"></div>
+    <div class="modal fade" id="divCPass" tabindex="-1" role="dialog" aria-hidden="true" data-width="400"></div>
+    <div class="modal fade" id="divNuevoTipo" tabindex="-1" role="dialog" aria-hidden="true" data-width="400"></div>
+    <div class="modal fade" id="divNuevoAutor" tabindex="-1" role="dialog" aria-hidden="true" data-width="400"></div>
+    <div class="modal fade" id="divNuevoLugar" tabindex="-1" role="dialog" aria-hidden="true" data-width="400"></div>
+    <div class="modal fade" id="divNuevoti" tabindex="-1" role="dialog" aria-hidden="true" data-width="400"></div>
+    <aside class="right-side" id="right-side">
+        <!-- Content Header (Page header) -->
+        <!--
+        <section class="content-header">
+            <h1>
+                Sistema de Archivo Hist&oacute;rico
+                <small>Bienvenido</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li class="active">Blank page</li>
+            </ol>
+        </section>
+        -->
+        <!-- Main content -->
+        <!--
+        <section id="content" class="content">
+
+        </section>
+        --><!-- /.content -->
+        <section class="content-header">
+            <h1>Principal</h1>
+            <ol class="breadcrumb">
+                <li>
+                    <a href="#"><i class="fa fa-dashboard"></i>Inicio</a>
+                </li>
+                <li class="active">Men&uacute; principal</li>
+            </ol>
+        </section>
+        <!-- END PAGE TITLE & BREADCRUMB-->
+        <!-- BEGIN PAGE CONTENT-->
+        <section id="content" class="content">
+            <h4 class="page-header">Mostrar listados</h4>
+            <div class="row">
+                <div class="col-lg-4 col-xs-6" title="Ver listado de colecciones">
+                    <div class="small-box bg-aqua">
+                        <div class="icon">
+                            <i class="fa fa-folder-open"></i>
+                        </div>
+                        <div class="inner">
+                            <h3>0</h3>
+                            <p>Colecciones</p>
+                        </div>
+                        <a class="small-box-footer menu_load_panel" href="#" data="_colecciones/listar">Ver listado <i
+                                class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xs-6" title="Ver listado de autores">
+                    <div class="small-box bg-green">
+                        <div class="icon">
+                            <i class="fa fa-male"></i>
+                        </div>
+                        <div class="inner">
+                            <h3>0</h3>
+                            <p>Autores</p>
+                        </div>
+                        <a class="small-box-footer menu_load_panel" href="#" data="_autores/listar_autores">Ver listado
+                            <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xs-6" title="Ver listado de localidades">
+                    <div class="small-box bg-yellow">
+                        <div class="icon">
+                            <i class="fa fa-map-marker"></i>
+                        </div>
+                        <div class="inner">
+                            <h3>0</h3>
+                            <p>Localidades</p>
+                        </div>
+                        <a class="small-box-footer menu_load_panel" href="#" data="_localidades/listar_localidades">Ver
+                            listado <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-xs-6" title="Ver listado de tipos de ingreso">
+                    <div class="small-box bg-blue">
+                        <div class="icon">
+                            <i class="fa fa-bars"></i>
+                        </div>
+                        <div class="inner">
+                            <h3>0</h3>
+                            <p>Tipos de ingreso</p>
+                        </div>
+                        <a class="small-box-footer menu_load_panel" href="#" data="_tipoingresos/listar">Ver listado <i
+                                class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xs-6" title="Ver listado de tipos de colecci&oacute;n">
+                    <div class="small-box bg-teal">
+                        <div class="icon">
+                            <i class="fa fa-ellipsis-v"></i>
+                        </div>
+                        <div class="inner">
+                            <h3>0</h3>
+                            <p>Tipos de colecci&oacute;n</p>
+                        </div>
+                        <a class="small-box-footer menu_load_panel" href="#" data="_tipos/listar_tipos">Ver listado <i
+                                class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xs-6" title="Ver colecciones en linea de tiempo">
+                    <div class="small-box bg-aqua">
+                        <div class="icon">
+                            <i class="fa fa-clock-o"></i>
+                        </div>
+                        <div class="inner">
+                            <h3>0</h3>
+                            <p>L&iacute;nea de tiempo</p>
+                        </div>
+                        <a class="small-box-footer menu_load_panel" href="#" data="_reportes/time_line">Ver l&iacute;nea
+                            de tiempo <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-xs-6" title="Ver reporte general">
+                    <div class="small-box bg-purple">
+                        <div class="icon">
+                            <i class="fa fa-bar-chart-o"></i>
+                        </div>
+                        <div class="inner">
+                            <h3>0</h3>
+                            <p>Reporte general</p>
+                        </div>
+                        <a class="small-box-footer menu_load_panel" href="#" data="_reportes/listar">Ver listado <i
+                                class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xs-6">
+                    <div class="small-box bg-maroon">
+                        <div class="icon">
+                            <i class="fa fa-users"></i>
+                        </div>
+                        <div class="inner">
+                            <h3>1</h3>
+                            <p>Usuarios</p>
+                        </div>
+                        <a class="small-box-footer menu_load_panel" href="#" data="_usuarios/listar">Ver listado <i
+                                class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xs-6" title="Salir del sistema">
+                    <div class="small-box bg-red">
+                        <div class="icon">
+                            <i class="fa fa-power-off"></i>
+                        </div>
+                        <div class="inner">
+                            <h3>&nbsp;</h3>
+                            <p>Salir del sistema</p>
+                        </div>
+                        <a class="small-box-footer" href="http://localhost/archivo/_principal/logout">Salir del sistema
+                            <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <h4 class="page-header">Adionar nuevos</h4>
+            <div class="row">
+                <div class="col-lg-4 col-xs-6" title="Adicionar nueva colecci&oacute;n">
+                    <div class="small-box bg-aqua">
+                        <div class="icon">
+                            <i class="fa fa-folder-open"></i>
+                        </div>
+                        <div class="inner">
+                            <h3>&nbsp;</h3>
+                            <p>Nueva colecci&oacute;n</p>
+                            <!--<p>Todos los pr&eacute;stamos</div>-->
+                        </div>
+                        <a class="small-box-footer menu_load_panel" href="#" data="_colecciones/nuevo"
+                           data_modal="true">Adicionar nueva <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xs-6" title="Adicionar nuevo autor">
+                    <div class="small-box bg-green">
+                        <div class="icon">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <div class="inner">
+                            <h3>&nbsp;</h3>
+                            <p>Nuevo autor</p>
+                            <!--<p>Todos los pr&eacute;stamos</div>-->
+                        </div>
+                        <a class="small-box-footer menu_load_panel" href="#" data="_autores/nuevo_view"
+                           data_id_modal="#divNuevoAutor" data_modal="true">Adicionar nuevo <i
+                                class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xs-6" title="Adicionar nueva localidad">
+                    <div class="small-box bg-yellow">
+                        <div class="icon">
+                            <i class="fa fa-map-marker"></i>
+                        </div>
+                        <div class="inner">
+                            <h3>&nbsp;</h3>
+                            <p>Nueva localidad</p>
+                            <!--<p>Todos los pr&eacute;stamos</div>-->
+                        </div>
+                        <a class="small-box-footer menu_load_panel" href="#" data="_localidades/nuevo_view"
+                           data_id_modal="#divNuevoLugar" data_modal="true">Adicionar nueva <i
+                                class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-xs-6" title="Adicionar nuevo tipo de ingreso">
+                    <div class="small-box bg-blue">
+                        <div class="icon">
+                            <i class="fa fa-bars"></i>
+                        </div>
+                        <div class="inner">
+                            <h3>&nbsp;</h3>
+                            <p>Nuevo tipo de ingreso</p>
+                            <!--<p>Todos los pr&eacute;stamos</div>-->
+                        </div>
+                        <a class="small-box-footer menu_load_panel" href="#" data="_tipoingresos/nuevo"
+                           data_id_modal="#divNuevoTipo" data_modal="true">Adicionar nuevo <i
+                                class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xs-6" title="Adicionar nuevo tipo de colecci&oacute;n">
+                    <div class="small-box bg-teal">
+                        <div class="icon">
+                            <i class="fa fa-ellipsis-v"></i>
+                        </div>
+                        <div class="inner">
+                            <h3>&nbsp;</h3>
+                            <p>Nuevo tipo de colecci&oacute;n</p>
+                            <!--<p>Todos los pr&eacute;stamos</div>-->
+                        </div>
+                        <a class="small-box-footer menu_load_panel" href="#" data="_tipos/nuevo_view"
+                           data_id_modal="#divNuevoTipo" data_modal="true">Adicionar nuevo <i
+                                class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xs-6" title="Adicionar nuevo usuario">
+                    <div class="small-box bg-maroon">
+                        <div class="inner">
+                            <h3>&nbsp;</h3>
+                            <p>Nuevo usuario</p>
+                            <!--<p>Todos los pr&eacute;stamos</div>-->
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <a class="small-box-footer menu_load_panel" href="#" data="_usuarios/nuevo" data_modal="true">Adicionar
+                            nuevo <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </aside>
+    <!-- /.right-side -->
 </div>
+<!-- ./wrapper -->
 
-    <script src="views/bootstrap/js/app.js"></script>
-    <script src="views/bootstrap/js/validarUsuario.js"></script>
-    <script src="views/bootstrap/js/claseMenu.js"></script>
-<footer>
-    
-</footer>
+    <script src="{% static 'libs/jquery-2.1.1/jquery-2.1.1.min.js' %}"></script>
+    <script src="{% static 'libs/jquery-2.1.1/jquery-migrate-1.2.1.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'libs/bootstrap-3.2.0/js/bootstrap.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'libs/js/plugins/dataTables/media/js/jquery.dataTables.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'libs/js/plugins/dataTables/media/js/dataTables.responsive.min.js' %}" type="text/javascript"></script>
+
+    <script type="text/javascript" src="{% static 'libs/js/plugins/dataTables/plugins/fnReloadAjax.js' %}"></script>
+
+    <script src="{% static 'libs/js/plugins/jquery-validation/jquery.validate.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'libs/js/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'libs/js/plugins/datepicker/locales/bootstrap-datepicker.es.js' %}"></script>
+    <!--
+    <script src="{% static 'libs/js/plugins/dataTables/plugins/bootstrap/dataTables.bootstrap.js' %}" type="text/javascript"></script>
+    -->
+    <!-- AdminLTE App -->
+    <script src="{% static 'libs/js/AdminLTE/app.js' %}" type="text/javascript"></script>
+    <!-- AdminLTE for demo purposes -->
+    <!--<script src="{% static 'libs/js/AdminLTE/demo.js' %}" type="text/javascript"></script>-->
+    <script src="{% static 'libs/js/plugins/bootstrap-toastr/toastr.min.js' %}"></script>
+    <script src="{% static 'libs/js/plugins/bootbox/bootbox.min.js' %}" type="text/javascript"></script>
+    <!--
+    <script src="{% static 'libs/js/plugins/timeline/js/jquery.easing.1.3.js' %}" type="text/javascript"></script>
+    <script src="{% static 'libs/js/plugins/timeline/js/jquery.timeline.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'libs/js/plugins/timeline/js/image.js' %}" type="text/javascript"></script>
+    <script src="{% static 'libs/js/plugins/timeline/js/lightbox.js' %}" type="text/javascript"></script>
+    -->
+    <script src="{% static 'libs/js/plugins/timelinr/js/jquery.timelinr-0.9.54.js' %}" type="text/javascript"></script>
+    <script src="{% static 'libs/js/plugins/select2/select2.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'libs/js/plugins/select2/select2_locale_es.js' %}" type="text/javascript"></script>
+    <script src="{% static 'libs/js/plugins/dataTables/media/js/jquery.dataTables.columnFilter.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'libs/js/plugins/block-ui/jquery.blockUI.min.js' %}" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        var base_url = '{% url 'usuario:index' %}';
+        var cargando = '<h5><img src="{% static 'img/ajax-loader.gif' %}" /> Cargando...</h5>';
+
+        jQuery(document).ready(function () {
+            $("a.menu_load_panel").click(function (e) {
+
+                $.blockUI({message: cargando});
+                if ($(this).attr("data_modal") == "true") {
+                    if ($(this).attr("data_id_modal") != null) {
+                        var id_modal = $(this).attr("data_id_modal");
+                        $("" + id_modal).html('');
+                        $("" + id_modal).load("http://localhost/archivo/" + $(this).attr("data"), {}, function () {
+                            $.unblockUI();
+                            $("" + id_modal).modal();
+                        });
+                    } else {
+                        $('#divNuevo').html('');
+                        $('#divNuevo').load("http://localhost/archivo/" + $(this).attr("data"), {}, function () {
+                            $.unblockUI();
+                            $('#divNuevo').modal();
+                        });
+                    }
+                } else {
+                    $("#right-side").load('http://localhost/archivo/' + $(this).attr("data"), {}, function () {
+                        $.unblockUI();
+                    });
+                }
+
+            });
+            $('#basic_search').submit(function (event) { //en el evento submit del fomulario
+                event.preventDefault();  //detenemos el comportamiento por default
+                var url = $(this).attr('action');  //la url del action del formulario
+                var datos = $(this).serialize(); // los datos del formulario
+                if ($('#query').val() != '') {
+                    $.ajax({
+                        type: 'POST',
+                        url: url,
+                        data: datos,
+                        //beforeSend: mostrarLoader, //funciones que definimos más abajo
+                        success: function (response) {
+                            $('#right-side').html(response);
+                        }
+                    });
+                } else {
+                    toastr.warning("Introduzca alg&uacute;n dato para realizar la b&uacute;squeda!", "Aviso del Sistema");
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

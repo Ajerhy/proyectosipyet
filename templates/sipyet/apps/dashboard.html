@@ -9,508 +9,253 @@
 {% block csssextras %}
 {% endblock csssextras %}
 
-<!--
-<a class="navbar-brand" href="#pablo">Dashboard
-{-% block titulo_barra %}
-
-{-% endblock titulo_barra %}
-</a>
--->
 
 {% block contenido %}
-    <div class="row">
-        <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="card card-stats">
-                <div class="card-header card-header-warning card-header-icon">
-                    <div class="card-icon">
-                        <i class="material-icons">content_copy</i>
-                    </div>
-                    <p class="card-category">Espacio usado</p>
-                    <h3 class="card-title">49/50
-                        <small>GB</small>
-                    </h3>
-                </div>
-                <div class="card-footer">
-                    <div class="stats">
-                        <i class="material-icons text-danger">warning</i>
-                        <a href="#pablo">Get More Space...</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="card card-stats">
-                <div class="card-header card-header-success card-header-icon">
-                    <div class="card-icon">
-                        <i class="material-icons">store</i>
-                    </div>
-                    <p class="card-category">Ingresos</p>
-                    <h3 class="card-title">$34,245</h3>
-                </div>
-                <div class="card-footer">
-                    <div class="stats">
-                        <i class="material-icons">date_range</i> Last 24 Hours
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="card card-stats">
-                <div class="card-header card-header-danger card-header-icon">
-                    <div class="card-icon">
-                        <i class="material-icons">info_outline</i>
-                    </div>
-                    <p class="card-category">Problemas resueltos</p>
-                    <h3 class="card-title">75</h3>
-                </div>
-                <div class="card-footer">
-                    <div class="stats">
-                        <i class="material-icons">local_offer</i> Tracked from Github
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="card card-stats">
-                <div class="card-header card-header-info card-header-icon">
-                    <div class="card-icon">
-                        <i class="fa fa-twitter"></i>
-                    </div>
-                    <p class="card-category">Seguidores</p>
-                    <h3 class="card-title">+245</h3>
-                </div>
-                <div class="card-footer">
-                    <div class="stats">
-                        <i class="material-icons">update</i> Just Updated
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4">
-            <div class="card card-chart">
-                <div class="card-header card-header-success">
-                    <div class="ct-chart" id="dailySalesChart"></div>
-                </div>
-                <div class="card-body">
-                    <h4 class="card-title">Ventas diarias</h4>
-                    <p class="card-category">
-                        <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span>
-                        Aumento de las ventas de hoy.</p>
-                </div>
-                <div class="card-footer">
-                    <div class="stats">
-                        <i class="material-icons">access_time</i> actualizado hace 4 minutos
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card card-chart">
-                <div class="card-header card-header-warning">
-                    <div class="ct-chart" id="websiteViewsChart"></div>
-                </div>
-                <div class="card-body">
-                    <h4 class="card-title">Subscripcion de Email</h4>
-                    <p class="card-category">
-                        Último rendimiento de campaña</p>
-                </div>
-                <div class="card-footer">
-                    <div class="stats">
-                        <i class="material-icons">access_time</i> campaña enviada hace 2 días
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card card-chart">
-                <div class="card-header card-header-danger">
-                    <div class="ct-chart" id="completedTasksChart"></div>
-                </div>
-                <div class="card-body">
-                    <h4 class="card-title">Tareas Completadas</h4>
-                    <p class="card-category">Último rendimiento de Campaña
-                    </p>
-                </div>
-                <div class="card-footer">
-                    <div class="stats">
-                        <i class="material-icons">access_time</i> campaña enviada hace 2 días
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-6 col-md-12">
-            <div class="card">
-                <div class="card-header card-header-tabs card-header-primary">
-                    <div class="nav-tabs-navigation">
-                        <div class="nav-tabs-wrapper">
-                            <span class="nav-tabs-title">Tasks:</span>
-                            <ul class="nav nav-tabs" data-tabs="tabs">
-                                <li class="nav-item">
-                                    <a class="nav-link active" href="#profile" data-toggle="tab">
-                                        <i class="material-icons">bug_report</i> Bugs
-                                        <div class="ripple-container"></div>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#messages" data-toggle="tab">
-                                        <i class="material-icons">code</i> Website
-                                        <div class="ripple-container"></div>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#settings" data-toggle="tab">
-                                        <i class="material-icons">cloud</i> Server
-                                        <div class="ripple-container"></div>
-                                    </a>
-                                </li>
-                            </ul>
+        <!--
+        <section class="content-header">
+            <h1>
+                Sistema de Archivo Hist&oacute;rico
+                <small>Bienvenido</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li class="active">Blank page</li>
+            </ol>
+        </section>
+        -->
+        <section class="content-header">
+            <h1>Principal</h1>
+            <ol class="breadcrumb">
+                <li>
+                    <a href="#"><i class="fa fa-dashboard"></i>Inicio</a>
+                </li>
+                <li class="active">Men&uacute; principal</li>
+            </ol>
+        </section>
+        <!-- END PAGE TITLE & BREADCRUMB-->
+        <!-- BEGIN PAGE CONTENT-->
+        <section id="content" class="content">
+            <h4 class="page-header">Mostrar listados</h4>
+            <div class="row">
+                <div class="col-lg-4 col-xs-6" title="Ver listado de colecciones">
+                    <div class="small-box bg-aqua">
+                        <div class="icon">
+                            <i class="fa fa-folder-open"></i>
                         </div>
+                        <div class="inner">
+                            <h3>0</h3>
+                            <p>Colecciones</p>
+                        </div>
+                        <a class="small-box-footer menu_load_panel" href="#" data="_colecciones/listar">Ver listado
+                            <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
-                <div class="card-body">
-                    <div class="tab-content">
-                        <div class="tab-pane active" id="profile">
-                            <table class="table">
-                                <tbody>
-                                <tr>
-                                    <td>
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                       checked>
-                                                <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                            </label>
-                                        </div>
-                                    </td>
-                                    <td>Sign contract for "What are conference organizers afraid of?"</td>
-                                    <td class="td-actions text-right">
-                                        <button type="button" rel="tooltip" title="Edit Task"
-                                                class="btn btn-primary btn-link btn-sm">
-                                            <i class="material-icons">edit</i>
-                                        </button>
-                                        <button type="button" rel="tooltip" title="Remove"
-                                                class="btn btn-danger btn-link btn-sm">
-                                            <i class="material-icons">close</i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" value="">
-                                                <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                            </label>
-                                        </div>
-                                    </td>
-                                    <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
-                                    <td class="td-actions text-right">
-                                        <button type="button" rel="tooltip" title="Edit Task"
-                                                class="btn btn-primary btn-link btn-sm">
-                                            <i class="material-icons">edit</i>
-                                        </button>
-                                        <button type="button" rel="tooltip" title="Remove"
-                                                class="btn btn-danger btn-link btn-sm">
-                                            <i class="material-icons">close</i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" value="">
-                                                <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                            </label>
-                                        </div>
-                                    </td>
-                                    <td>Flooded: One year later, assessing what was lost and what was
-                                        found when a ravaging rain swept through metro Detroit
-                                    </td>
-                                    <td class="td-actions text-right">
-                                        <button type="button" rel="tooltip" title="Edit Task"
-                                                class="btn btn-primary btn-link btn-sm">
-                                            <i class="material-icons">edit</i>
-                                        </button>
-                                        <button type="button" rel="tooltip" title="Remove"
-                                                class="btn btn-danger btn-link btn-sm">
-                                            <i class="material-icons">close</i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                       checked>
-                                                <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                            </label>
-                                        </div>
-                                    </td>
-                                    <td>Create 4 Invisible User Experiences you Never Knew About</td>
-                                    <td class="td-actions text-right">
-                                        <button type="button" rel="tooltip" title="Edit Task"
-                                                class="btn btn-primary btn-link btn-sm">
-                                            <i class="material-icons">edit</i>
-                                        </button>
-                                        <button type="button" rel="tooltip" title="Remove"
-                                                class="btn btn-danger btn-link btn-sm">
-                                            <i class="material-icons">close</i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
+                <div class="col-lg-4 col-xs-6" title="Ver listado de autores">
+                    <div class="small-box bg-green">
+                        <div class="icon">
+                            <i class="fa fa-male"></i>
                         </div>
-                        <div class="tab-pane" id="messages">
-                            <table class="table">
-                                <tbody>
-                                <tr>
-                                    <td>
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                       checked>
-                                                <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                            </label>
-                                        </div>
-                                    </td>
-                                    <td>Flooded: One year later, assessing what was lost and what was
-                                        found when a ravaging rain swept through metro Detroit
-                                    </td>
-                                    <td class="td-actions text-right">
-                                        <button type="button" rel="tooltip" title="Edit Task"
-                                                class="btn btn-primary btn-link btn-sm">
-                                            <i class="material-icons">edit</i>
-                                        </button>
-                                        <button type="button" rel="tooltip" title="Remove"
-                                                class="btn btn-danger btn-link btn-sm">
-                                            <i class="material-icons">close</i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" value="">
-                                                <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                            </label>
-                                        </div>
-                                    </td>
-                                    <td>Sign contract for "What are conference organizers afraid of?"</td>
-                                    <td class="td-actions text-right">
-                                        <button type="button" rel="tooltip" title="Edit Task"
-                                                class="btn btn-primary btn-link btn-sm">
-                                            <i class="material-icons">edit</i>
-                                        </button>
-                                        <button type="button" rel="tooltip" title="Remove"
-                                                class="btn btn-danger btn-link btn-sm">
-                                            <i class="material-icons">close</i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
+                        <div class="inner">
+                            <h3>0</h3>
+                            <p>Autores</p>
                         </div>
-                        <div class="tab-pane" id="settings">
-                            <table class="table">
-                                <tbody>
-                                <tr>
-                                    <td>
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" value="">
-                                                <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                            </label>
-                                        </div>
-                                    </td>
-                                    <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
-                                    <td class="td-actions text-right">
-                                        <button type="button" rel="tooltip" title="Edit Task"
-                                                class="btn btn-primary btn-link btn-sm">
-                                            <i class="material-icons">edit</i>
-                                        </button>
-                                        <button type="button" rel="tooltip" title="Remove"
-                                                class="btn btn-danger btn-link btn-sm">
-                                            <i class="material-icons">close</i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                       checked>
-                                                <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                            </label>
-                                        </div>
-                                    </td>
-                                    <td>Flooded: One year later, assessing what was lost and what was
-                                        found when a ravaging rain swept through metro Detroit
-                                    </td>
-                                    <td class="td-actions text-right">
-                                        <button type="button" rel="tooltip" title="Edit Task"
-                                                class="btn btn-primary btn-link btn-sm">
-                                            <i class="material-icons">edit</i>
-                                        </button>
-                                        <button type="button" rel="tooltip" title="Remove"
-                                                class="btn btn-danger btn-link btn-sm">
-                                            <i class="material-icons">close</i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                       checked>
-                                                <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                            </label>
-                                        </div>
-                                    </td>
-                                    <td>Sign contract for "What are conference organizers afraid of?"</td>
-                                    <td class="td-actions text-right">
-                                        <button type="button" rel="tooltip" title="Edit Task"
-                                                class="btn btn-primary btn-link btn-sm">
-                                            <i class="material-icons">edit</i>
-                                        </button>
-                                        <button type="button" rel="tooltip" title="Remove"
-                                                class="btn btn-danger btn-link btn-sm">
-                                            <i class="material-icons">close</i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
+                        <a class="small-box-footer menu_load_panel" href="#" data="_autores/listar_autores">Ver
+                            listado <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xs-6" title="Ver listado de localidades">
+                    <div class="small-box bg-yellow">
+                        <div class="icon">
+                            <i class="fa fa-map-marker"></i>
                         </div>
+                        <div class="inner">
+                            <h3>0</h3>
+                            <p>Localidades</p>
+                        </div>
+                        <a class="small-box-footer menu_load_panel" href="#" data="_localidades/listar_localidades">Ver
+                            listado <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-6 col-md-12">
-            <div class="card">
-                <div class="card-header card-header-warning">
-                    <h4 class="card-title">Employees Stats</h4>
-                    <p class="card-category">New employees on 15th September, 2016</p>
+            <div class="row">
+                <div class="col-lg-4 col-xs-6" title="Ver listado de tipos de ingreso">
+                    <div class="small-box bg-blue">
+                        <div class="icon">
+                            <i class="fa fa-bars"></i>
+                        </div>
+                        <div class="inner">
+                            <h3>0</h3>
+                            <p>Tipos de ingreso</p>
+                        </div>
+                        <a class="small-box-footer menu_load_panel" href="#" data="_tipoingresos/listar">Ver listado
+                            <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
                 </div>
-                <div class="card-body table-responsive">
-                    <table class="table table-hover">
-                        <thead class="text-warning">
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Salary</th>
-                        <th>Country</th>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Dakota Rice</td>
-                            <td>$36,738</td>
-                            <td>Niger</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Minerva Hooper</td>
-                            <td>$23,789</td>
-                            <td>Curaçao</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Sage Rodriguez</td>
-                            <td>$56,142</td>
-                            <td>Netherlands</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Philip Chaney</td>
-                            <td>$38,735</td>
-                            <td>Korea, South</td>
-                        </tr>
-                        </tbody>
-                    </table>
+                <div class="col-lg-4 col-xs-6" title="Ver listado de tipos de colecci&oacute;n">
+                    <div class="small-box bg-teal">
+                        <div class="icon">
+                            <i class="fa fa-ellipsis-v"></i>
+                        </div>
+                        <div class="inner">
+                            <h3>0</h3>
+                            <p>Tipos de colecci&oacute;n</p>
+                        </div>
+                        <a class="small-box-footer menu_load_panel" href="#" data="_tipos/listar_tipos">Ver listado
+                            <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xs-6" title="Ver colecciones en linea de tiempo">
+                    <div class="small-box bg-aqua">
+                        <div class="icon">
+                            <i class="fa fa-clock-o"></i>
+                        </div>
+                        <div class="inner">
+                            <h3>0</h3>
+                            <p>L&iacute;nea de tiempo</p>
+                        </div>
+                        <a class="small-box-footer menu_load_panel" href="#" data="_reportes/time_line">Ver l&iacute;nea
+                            de tiempo <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
+            <div class="row">
+                <div class="col-lg-4 col-xs-6" title="Ver reporte general">
+                    <div class="small-box bg-purple">
+                        <div class="icon">
+                            <i class="fa fa-bar-chart-o"></i>
+                        </div>
+                        <div class="inner">
+                            <h3>0</h3>
+                            <p>Reporte general</p>
+                        </div>
+                        <a class="small-box-footer menu_load_panel" href="#" data="_reportes/listar">Ver listado <i
+                                class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xs-6">
+                    <div class="small-box bg-maroon">
+                        <div class="icon">
+                            <i class="fa fa-users"></i>
+                        </div>
+                        <div class="inner">
+                            <h3>1</h3>
+                            <p>Usuarios</p>
+                        </div>
+                        <a class="small-box-footer menu_load_panel" href="#" data="_usuarios/listar">Ver listado <i
+                                class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xs-6" title="Salir del sistema">
+                    <div class="small-box bg-red">
+                        <div class="icon">
+                            <i class="fa fa-power-off"></i>
+                        </div>
+                        <div class="inner">
+                            <h3>&nbsp;</h3>
+                            <p>Salir del sistema</p>
+                        </div>
+                        <a class="small-box-footer" href="http://localhost/archivo/_principal/logout">Salir del
+                            sistema <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <h4 class="page-header">Adionar nuevos</h4>
+            <div class="row">
+                <div class="col-lg-4 col-xs-6" title="Adicionar nueva colecci&oacute;n">
+                    <div class="small-box bg-aqua">
+                        <div class="icon">
+                            <i class="fa fa-folder-open"></i>
+                        </div>
+                        <div class="inner">
+                            <h3>&nbsp;</h3>
+                            <p>Nueva colecci&oacute;n</p>
+                            <!--<p>Todos los pr&eacute;stamos</div>-->
+                        </div>
+                        <a class="small-box-footer menu_load_panel" href="#" data="_colecciones/nuevo"
+                           data_modal="true">Adicionar nueva <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xs-6" title="Adicionar nuevo autor">
+                    <div class="small-box bg-green">
+                        <div class="icon">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <div class="inner">
+                            <h3>&nbsp;</h3>
+                            <p>Nuevo autor</p>
+                            <!--<p>Todos los pr&eacute;stamos</div>-->
+                        </div>
+                        <a class="small-box-footer menu_load_panel" href="#" data="_autores/nuevo_view"
+                           data_id_modal="#divNuevoAutor" data_modal="true">Adicionar nuevo <i
+                                class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xs-6" title="Adicionar nueva localidad">
+                    <div class="small-box bg-yellow">
+                        <div class="icon">
+                            <i class="fa fa-map-marker"></i>
+                        </div>
+                        <div class="inner">
+                            <h3>&nbsp;</h3>
+                            <p>Nueva localidad</p>
+                            <!--<p>Todos los pr&eacute;stamos</div>-->
+                        </div>
+                        <a class="small-box-footer menu_load_panel" href="#" data="_localidades/nuevo_view"
+                           data_id_modal="#divNuevoLugar" data_modal="true">Adicionar nueva <i
+                                class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-xs-6" title="Adicionar nuevo tipo de ingreso">
+                    <div class="small-box bg-blue">
+                        <div class="icon">
+                            <i class="fa fa-bars"></i>
+                        </div>
+                        <div class="inner">
+                            <h3>&nbsp;</h3>
+                            <p>Nuevo tipo de ingreso</p>
+                            <!--<p>Todos los pr&eacute;stamos</div>-->
+                        </div>
+                        <a class="small-box-footer menu_load_panel" href="#" data="_tipoingresos/nuevo"
+                           data_id_modal="#divNuevoTipo" data_modal="true">Adicionar nuevo <i
+                                class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xs-6" title="Adicionar nuevo tipo de colecci&oacute;n">
+                    <div class="small-box bg-teal">
+                        <div class="icon">
+                            <i class="fa fa-ellipsis-v"></i>
+                        </div>
+                        <div class="inner">
+                            <h3>&nbsp;</h3>
+                            <p>Nuevo tipo de colecci&oacute;n</p>
+                            <!--<p>Todos los pr&eacute;stamos</div>-->
+                        </div>
+                        <a class="small-box-footer menu_load_panel" href="#" data="_tipos/nuevo_view"
+                           data_id_modal="#divNuevoTipo" data_modal="true">Adicionar nuevo <i
+                                class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xs-6" title="Adicionar nuevo usuario">
+                    <div class="small-box bg-maroon">
+                        <div class="inner">
+                            <h3>&nbsp;</h3>
+                            <p>Nuevo usuario</p>
+                            <!--<p>Todos los pr&eacute;stamos</div>-->
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <a class="small-box-footer menu_load_panel" href="#" data="_usuarios/nuevo"
+                           data_modal="true">Adicionar nuevo <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
 {% endblock contenido %}
 
 
 {% block jssextras %}
-    <script type="text/javascript">
 
-            var base_url = '<?=base_url()?>';
-            var cargando = '<h5><img src="<?=base_url()?>libs/img/ajax-loader.gif" /> Cargando...</h5>';
-
-            jQuery(document).ready(function(){
-                $("a.menu_load_panel").click(function(e){
-
-                   $.blockUI({ message: cargando });
-                   if($(this).attr("data_modal")=="true"){
-                        if($(this).attr("data_id_modal")!=null){
-                            var id_modal=$(this).attr("data_id_modal");
-                            $(""+id_modal).html('');
-                            $(""+id_modal).load("<?=base_url()?>"+$(this).attr("data"), {}, function(){
-                                $.unblockUI();
-                                $(""+id_modal).modal();
-                            });
-                        }else{
-                            $('#divNuevo').html('');
-                            $('#divNuevo').load("<?=base_url()?>"+$(this).attr("data"), {}, function(){
-                                $.unblockUI();
-                                $('#divNuevo').modal();
-                            });
-                        }
-                   }else{
-                       $("#right-side").load('<?=base_url()?>'+$(this).attr("data"),{},function(){
-                            $.unblockUI();
-                       });
-                   }
-
-                });
-                $('#basic_search').submit(function(event){ //en el evento submit del fomulario
-        	          event.preventDefault();  //detenemos el comportamiento por default
-        			  var url = $(this).attr('action');  //la url del action del formulario
-        			  var datos = $(this).serialize(); // los datos del formulario
-        			  if($('#query').val()!=''){
-        			     $.ajax({
-            				  type: 'POST',
-            				  url: url,
-            				  data: datos,
-            				  //beforeSend: mostrarLoader, //funciones que definimos más abajo
-            				  success: function(response){
-            				    $('#right-side').html(response);
-            				  }
-            			   });
-        			  }else{
-        			     toastr.warning("Introduzca alg&uacute;n dato para realizar la b&uacute;squeda!", "Aviso del Sistema");
-        			  }
-                });
-            });
-        </script>
 {% endblock jssextras %}
