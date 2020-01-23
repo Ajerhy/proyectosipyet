@@ -22,7 +22,7 @@
 {% block contenido %}
     <h4 class="page-header">Mostrar listados</h4>
 
-    <div class="row">
+    <!--div class="row">
         <div class="col-lg-12 col-xs-12">
             <div class="alert alert-info alert-dismissable">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -32,7 +32,7 @@
                 </p>
             </div>
         </div>
-    </div>
+    </div-->
     <div class="row">
         <div class="col-lg-4 col-xs-6" title="Ver listado de colecciones">
             <div class="small-box bg-aqua">
@@ -151,7 +151,7 @@
                     <h3>&nbsp;</h3>
                     <p>Salir del sistema</p>
                 </div>
-                <a class="small-box-footer" href="http://localhost/archivo/_principal/logout">Salir del
+                <a class="small-box-footer" href="{% url 'usuario:logout' %}">Salir del
                     sistema <i class="fa fa-arrow-circle-right"></i></a>
             </div>
         </div>
@@ -254,5 +254,20 @@
 
 
 {% block jssextras %}
+    <script>
+    $(function () {
+           toastr["success"]("Sistema de Parqueo y Estacionamiento Tahuamanu.", "Bienvenido <i class=\"fa fa-anchor\"></i>")
+       },)
+    </script>
 
+    <script>
+        var resizefunc = [];
+        window.setTimeout(function () {
+                $(".alert").fadeTo(500, 0).slideUp(500, function () {
+                    $(this).remove();
+                });
+            },
+            /*  Tiempo 5s */
+            5000);
+    </script>
 {% endblock jssextras %}

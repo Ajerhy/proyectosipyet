@@ -67,17 +67,6 @@
     <script src="{% static 'libs/js/plugins/dataTables/media/js/jquery.dataTables.columnFilter.min.js' %}" type="text/javascript"></script>
     <script src="{% static 'libs/js/plugins/block-ui/jquery.blockUI.min.js' %}" type="text/javascript"></script>
 
-    <script>
-        var resizefunc = [];
-        window.setTimeout(function () {
-                $(".alert").fadeTo(500, 0).slideUp(500, function () {
-                    $(this).remove();
-                });
-            },
-            /*  Tiempo 5s */
-            5000);
-    </script>
-
     <script type="text/javascript">
 
         var base_url = '{% url 'usuario:index' %}';
@@ -109,6 +98,7 @@
                 }
 
             });
+
             $('#basic_search').submit(function (event) { //en el evento submit del fomulario
                 event.preventDefault();  //detenemos el comportamiento por default
                 var url = $(this).attr('action');  //la url del action del formulario
@@ -127,6 +117,7 @@
                     toastr.warning("Introduzca alg&uacute;n dato para realizar la b&uacute;squeda!", "Aviso del Sistema");
                 }
             });
+
         });
     </script>
 

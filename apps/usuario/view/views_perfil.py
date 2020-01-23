@@ -10,7 +10,8 @@ from django.http import (HttpResponseRedirect,JsonResponse, HttpResponse,Http404
 
 import json
 
-#from apps.usuario.models import Usuario
+from apps.usuario.models import Perfil
+from apps.usuario.form.forms_perfil import LoginUsuarioPerfilForm
 #from apps.alquiler.models import Servicio
 #from apps.estacionamiento.models import Servicio
 
@@ -28,16 +29,57 @@ from django.db.models import Q
 
 
 # Login
-#class LoginView(TemplateView,LoginRequiredMixin):
-class LoginView(TemplateView):
-    #login_url = 'usuario:index'
-    template_name = "sipyet/apps/usuario/index.html"  # url
+class LoginPerfilView(TemplateView,LoginRequiredMixin):
+    login_url = 'usuario:index'
+    template_name = "sipyet/apps/usuario/index.html"#url
+    success_url = reverse_lazy("usuario:dashboard")#url
+
+    def get_context_data(self, **kwargs):
+        context = super(LoginPerfilView, self).get_context_data(**kwargs)
+        return context
+
+    def dispatch(self, request, *args, **kwargs):
+        if request.user.is_authenticated:
+            return HttpResponseRedirect(self.success_url)
+        return super(LoginPerfilView, self).dispatch(request, *args, **kwargs)
+
+    def post(self, request, *args, **kwargs):
+        form = LoginUsuarioPerfilForm(request.POST, request=request)
+        if form.is_valid():
+            # user = Perfil.objects.filter(usuario=request.POST.get('usuario')).first()
+            perfil = Perfil.objects.filter(usuario=request.POST.get('usuario')).first()
+
+            if perfil is not None:
+                if perfil.estado:
+                    perfil = authenticate(
+                        usuario=request.POST.get('usuario'),
+                        password=request.POST.get('password'))
+                    if perfil is not None:
+                        login_django(request, perfil)
+                        return redirect('usuario:dashboard')
+                        # return HttpResponseRedirect('usuarios:dashboard')
+                    return render(request, "sipyet/apps/usuario/index.html", {
+                        "error": True,
+                        "message": "Tu nombre de usuario y contraseña no coinciden. Inténtalo de nuevo."}
+                                  )
+                return render(request, "sipyet/apps/usuario/index.html", {
+                    "error": True,
+                    "message": "Su cuenta está inactiva. Por favor, póngase en contacto con el administrador"}
+                              )
+            return render(request, "sipyet/apps/usuario/index.html", {
+                "error": True,
+                "message": "Tu cuenta no se encuentra. Por favor, póngase en contacto con el administrador"}
+                          )
+        return render(request, "sipyet/apps/usuario/index.html", {
+            # "error": True,
+            # "message": "Tu nombre de Usuario y Contraseña no coinciden. Inténtalo de nuevo."
+            "form": form
+        })
 
 #Dashboard
-#class DashboardView(LoginRequiredMixin,TemplateView):
-class DashboardView(TemplateView):
+class DashboardView(LoginRequiredMixin,TemplateView):
     template_name = 'sipyet/apps/dashboard.html'
-    #login_url = 'usuario:index'
+    login_url = 'usuario:index'
 
 #Salir
 @login_required(login_url='usuario:index')

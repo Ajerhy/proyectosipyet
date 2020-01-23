@@ -21,7 +21,14 @@ ROLES = (("Administrador", "Administrador"),
          ("Gerente", "Gerente"),
          ("GV", "Gerente de Ventas"),
          ("RV", "Representante de Ventas"),)
-
+"""
+ROLES = (("1", "Administrador"),
+         ("2", "Usuario"),
+         ("3", "Personal"),
+         ("4", "Gerente"),
+         ("5", "Gerente de ventas"),
+         ("6", "Representante de ventas"),)
+"""
 EXPEDIDOS = (("", "Desconocido"),
              ("Pando", "Pando"),
              ("Beni", "Beni"),
@@ -54,13 +61,6 @@ TIPO_PERSONA = (("J", "Juridico"),
 CLASE = (("C", "Contrato"),
          ("N", "Nuevo"),
          ("S", "Usuario"),)
-
-ROLES = (("1", "Administrador"),
-         ("2", "Usuario"),
-         ("3", "Personal"),
-         ("4", "Gerente"),
-         ("5", "Gerente de ventas"),
-         ("6", "Representante de ventas"),)
 
 ROLES_FUNCIONARIOS = (("Personal Tecnico", "Personal Tecnico"),
                       ("Personal Atencion", "Personal Atencion"),)

@@ -9,11 +9,22 @@
 
         <div class="header">
             <a href="{% url 'usuario:index' %}">
-                <img src="{% static 'img/archivos1.png' %}"/>
+                <img src="{% static 'img/banner.png' %}"/>
             </a>
         </div>
 
-        <form id="login_form" action="" method="post">
+        <!--div class="center-block">
+            {% if error %}
+                <div class="alert alert-danger" class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span></button>
+                    <strong>Error! </strong>{{ message }}
+                </div>
+            {% endif %}
+        </div-->
+
+        <form id="login_form" method="post" autocomplete="off">
+            {% csrf_token %}
             <div class="body bg-gray">
                 <div class="row">
                     <div class="col-md-12">
@@ -21,8 +32,8 @@
                                 <span class="input-group-addon">
                                         <i class="fa fa-user"></i>
                                 </span>
-                            <input type="text" name="usuario" id="usuario" class="form-control"
-                                   placeholder="Nombre de Usuario"></input>
+                            <input type="text" name="usuario" id="usuario" class="form-control" placeholder="Nombre de Usuario" autocomplete="off" />
+                            <span class="error">{{form.usuario.errors}}</span>
                         </div>
                     </div>
                 </div>
@@ -33,18 +44,23 @@
                             <div class="input-group-addon">
                                 <i class="fa fa-lock"></i>
                             </div>
-                            <input type="password" name="clave" class="form-control"
-                                   placeholder="Aqu&iacute; su Contrase&ntilde;a"/>
+                            <input type="password" name="password" class="form-control" placeholder="Aqu&iacute; su Contrase&ntilde;a" autocomplete="off" />
+                            <span class="error">{{form.password.errors}}</span>
                         </div>
                     </div>
                 </div>
             </div>
+
+
+
             <div class="footer">
                 <button type="submit" class="btn bg-olive btn-block">Ingresar</button>
                 <p><a href="{% url 'usuario:dashboard' %}">Dashboard</a></p>
                 <p><a href="{% url 'usuario:menu' %}">Menu</a></p>
             </div>
         </form>
+
+
 
         <div class="margin text-center">
             <span><script>document.write(new Date().getFullYear())</script> &copy; Sistema de Parqueo y Estacionamiento Tahuamanu</span>
@@ -54,6 +70,14 @@
 {% endblock content %}
 {% block jssextras %}
    <script type="text/javascript">
+   $(function () {
+       {% if error %}
+           toastr["error"]("{{ message }}", "Aviso del Sistema")
+       {% endif %}
+       },)
+    </script>
+
+   <!--script type="text/javascript">
         jQuery(document).ready(function() {
             $("#usuario").focus();
             $("#login_form").validate({
@@ -95,5 +119,5 @@
             });
 
         });
-    </script>
+    </script-->
 {% endblock jssextras %}

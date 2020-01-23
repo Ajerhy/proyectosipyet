@@ -26,7 +26,8 @@ SECRET_KEY = 'oqznirhhb$5h4fji%6e+t20corz^q#ekbl!686ux*ev70n!pu8'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+#ALLOWED_HOSTS = ['192.168.1.10']
+#manage.py runserver 192.168.1.10:8000
 
 # Application definition
 
@@ -118,6 +119,7 @@ USE_L10N = True
 
 USE_TZ = True
 
+AUTH_USER_MODEL = 'usuario.Perfil'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/

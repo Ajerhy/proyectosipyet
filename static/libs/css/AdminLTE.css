@@ -2426,9 +2426,10 @@ Component: timeline
   border-bottom-left-radius: 0;
   /*
   #
+  background: #3d9970;
   #
   */
-  background: #3d9970;
+  background:#3c8dbc;
   padding: 20px 10px;
   text-align: center;
   font-size: 26px;

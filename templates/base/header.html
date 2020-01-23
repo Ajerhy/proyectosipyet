@@ -5,7 +5,11 @@
 <!-- header logo: style can be found in header.less -->
 <header class="header">
     <a href="{% url 'usuario:dashboard' %}" class="logo">
-        <img src="{% static 'img/archivos1.png' %}">
+        <!--
+        <img src="{% static 'img/archivos1.png' %}" class="img-rounded">
+        -->
+        <i class="fa fa-anchor"></i>
+        <span>SipyeT</span></a>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top" role="navigation">
@@ -33,11 +37,11 @@
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header bg-light-blue">
-                            <img src="http://localhost/archivo/libs/img/avatar5.png" class="img-circle"
-                                 alt="User Image"/>
+                            <!--img src="{% static 'img/avatar5.png' %}" class="img-circle" alt="Imagen de Usuario"/-->
+                            <img src="{% static 'img/favicon.ico' %}" class="img-circle" alt="Imagen de Usuario"/>
                             <p>
-                                ADMINISTRADOR <small>
-                                Super Administrador </small>
+                                {{ user.nombre|capfirst }} {{ user.apellido|capfirst }} <small>
+                                {{ user.roles }} </small>
                             </p>
                         </li>
                         <!-- Menu Body -->
@@ -59,11 +63,12 @@
                             <div class="pull-left">
                                 <a href="#" data="_usuarios/change_pass" data_id_modal="#divCPass" data_modal="true"
                                    class="btn btn-default btn-flat menu_load_panel"
-                                   title="Cambiar Contrase&ntilde;a">C. Contrase&ntilde;a</a>
+                                   title="Ver Perfil de Usuario">Perfil de Usuario</a>
                             </div>
                             <div class="pull-right">
-                                <a href="http://localhost/archivo/_principal/logout"
-                                   class="btn btn-default btn-flat">Cerrar Sesi&oacute;n</a>
+                                <a href="{% url 'usuario:logout' %}"
+                                   class="btn btn-default btn-flat"
+                                   title="Salir del Sistema">Cerrar Sesi&oacute;n</a>
                             </div>
                         </li>
                     </ul>

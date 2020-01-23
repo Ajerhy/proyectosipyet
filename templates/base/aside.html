@@ -9,16 +9,17 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="{% static 'img/avatar5.png' %}" class="img-circle" alt="Imagen de Usuario"/>
+                <!--img src="{% static 'img/avatar5.png' %}" class="img-circle" alt="Imagen de Usuario"/-->
+                <img src="{% static 'img/favicon.ico' %}" class="img-circle" alt="Imagen de Usuario"/>
             </div>
             <div class="pull-left info">
-                <p>Hola, admin</p>
+                <p>Hola, {{ user.nombre|capfirst }}</p>
 
                 <a href="#"><i class="fa fa-circle text-success"></i> En l&iacute;nea</a>
             </div>
         </div>
         <!-- search form -->
-        <form action="http://localhost/archivo/_principal/buscar" method="POST" id="basic_search"
+        <form action="" method="POST" id="basic_search"
               name="basic_search" class="sidebar-form">
             <div class="input-group">
                 <input type="text" name="query" id="query" class="form-control"
